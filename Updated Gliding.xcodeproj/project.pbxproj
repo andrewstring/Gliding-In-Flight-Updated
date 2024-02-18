@@ -1,0 +1,734 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */; };
+		49DA875F2B825DB800350008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA875E2B825DB800350008 /* Assets.xcassets */; };
+		49DA87632B825DB800350008 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA87622B825DB800350008 /* Preview Assets.xcassets */; };
+		49DA876D2B825DB800350008 /* Updated_GlidingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA876C2B825DB800350008 /* Updated_GlidingTests.swift */; };
+		49DA87772B825DB800350008 /* Updated_GlidingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87762B825DB800350008 /* Updated_GlidingUITests.swift */; };
+		49DA87792B825DB800350008 /* Updated_GlidingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87782B825DB800350008 /* Updated_GlidingUITestsLaunchTests.swift */; };
+		49DA878A2B825DF200350008 /* Glider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87892B825DF200350008 /* Glider.swift */; };
+		49DA878C2B825E1200350008 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA878B2B825E1200350008 /* Location.swift */; };
+		49DA878E2B825E2D00350008 /* Thermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA878D2B825E2D00350008 /* Thermal.swift */; };
+		49DA87902B825E3E00350008 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA878F2B825E3E00350008 /* Flight.swift */; };
+		49DA87932B825F2200350008 /* AbsoluteBarometricAltitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87922B825F2200350008 /* AbsoluteBarometricAltitude.swift */; };
+		49DA87952B825F2A00350008 /* RelativeBarometricAltitude.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87942B825F2A00350008 /* RelativeBarometricAltitude.swift */; };
+		49DA87982B825F7400350008 /* GliderStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87972B825F7400350008 /* GliderStore.swift */; };
+		49DA879A2B825F7B00350008 /* FlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87992B825F7B00350008 /* FlightStore.swift */; };
+		49DA879D2B8263EB00350008 /* GliderStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA879C2B8263EB00350008 /* GliderStoreError.swift */; };
+		49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA879E2B8263F300350008 /* FlightStoreError.swift */; };
+		49DA87A22B826DE700350008 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A12B826DE700350008 /* APIBase.swift */; };
+		49DA87A42B826DEE00350008 /* APIGlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A32B826DEE00350008 /* APIGlider.swift */; };
+		49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A52B826DFA00350008 /* APIFlight.swift */; };
+		49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A72B826E4F00350008 /* APIThermal.swift */; };
+		49DA87AA2B826E5D00350008 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A92B826E5D00350008 /* APIError.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49DA87692B825DB800350008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49DA874F2B825DB600350008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DA87562B825DB600350008;
+			remoteInfo = "Updated Gliding";
+		};
+		49DA87732B825DB800350008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49DA874F2B825DB600350008 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49DA87562B825DB600350008;
+			remoteInfo = "Updated Gliding";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49DA87572B825DB600350008 /* Updated Gliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Updated Gliding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingApp.swift; sourceTree = "<group>"; };
+		49DA875E2B825DB800350008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49DA87602B825DB800350008 /* Updated_Gliding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Updated_Gliding.entitlements; sourceTree = "<group>"; };
+		49DA87622B825DB800350008 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49DA87682B825DB800350008 /* Updated GlidingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Updated GlidingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DA876C2B825DB800350008 /* Updated_GlidingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingTests.swift; sourceTree = "<group>"; };
+		49DA87722B825DB800350008 /* Updated GlidingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Updated GlidingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49DA87762B825DB800350008 /* Updated_GlidingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingUITests.swift; sourceTree = "<group>"; };
+		49DA87782B825DB800350008 /* Updated_GlidingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		49DA87892B825DF200350008 /* Glider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glider.swift; sourceTree = "<group>"; };
+		49DA878B2B825E1200350008 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		49DA878D2B825E2D00350008 /* Thermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thermal.swift; sourceTree = "<group>"; };
+		49DA878F2B825E3E00350008 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		49DA87922B825F2200350008 /* AbsoluteBarometricAltitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsoluteBarometricAltitude.swift; sourceTree = "<group>"; };
+		49DA87942B825F2A00350008 /* RelativeBarometricAltitude.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeBarometricAltitude.swift; sourceTree = "<group>"; };
+		49DA87972B825F7400350008 /* GliderStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GliderStore.swift; sourceTree = "<group>"; };
+		49DA87992B825F7B00350008 /* FlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStore.swift; sourceTree = "<group>"; };
+		49DA879C2B8263EB00350008 /* GliderStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GliderStoreError.swift; sourceTree = "<group>"; };
+		49DA879E2B8263F300350008 /* FlightStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStoreError.swift; sourceTree = "<group>"; };
+		49DA87A12B826DE700350008 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		49DA87A32B826DEE00350008 /* APIGlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGlider.swift; sourceTree = "<group>"; };
+		49DA87A52B826DFA00350008 /* APIFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFlight.swift; sourceTree = "<group>"; };
+		49DA87A72B826E4F00350008 /* APIThermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIThermal.swift; sourceTree = "<group>"; };
+		49DA87A92B826E5D00350008 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49DA87542B825DB600350008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA87652B825DB800350008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA876F2B825DB800350008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49DA874E2B825DB600350008 = {
+			isa = PBXGroup;
+			children = (
+				49DA87592B825DB600350008 /* Updated Gliding */,
+				49DA876B2B825DB800350008 /* Updated GlidingTests */,
+				49DA87752B825DB800350008 /* Updated GlidingUITests */,
+				49DA87582B825DB600350008 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49DA87582B825DB600350008 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87572B825DB600350008 /* Updated Gliding.app */,
+				49DA87682B825DB800350008 /* Updated GlidingTests.xctest */,
+				49DA87722B825DB800350008 /* Updated GlidingUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49DA87592B825DB600350008 /* Updated Gliding */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87872B825DD600350008 /* Model */,
+				49DA87862B825DD100350008 /* UIKit */,
+				49DA87852B825DCA00350008 /* SwiftUI */,
+				49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */,
+				49DA875E2B825DB800350008 /* Assets.xcassets */,
+				49DA87602B825DB800350008 /* Updated_Gliding.entitlements */,
+				49DA87612B825DB800350008 /* Preview Content */,
+			);
+			path = "Updated Gliding";
+			sourceTree = "<group>";
+		};
+		49DA87612B825DB800350008 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87622B825DB800350008 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		49DA876B2B825DB800350008 /* Updated GlidingTests */ = {
+			isa = PBXGroup;
+			children = (
+				49DA876C2B825DB800350008 /* Updated_GlidingTests.swift */,
+			);
+			path = "Updated GlidingTests";
+			sourceTree = "<group>";
+		};
+		49DA87752B825DB800350008 /* Updated GlidingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87762B825DB800350008 /* Updated_GlidingUITests.swift */,
+				49DA87782B825DB800350008 /* Updated_GlidingUITestsLaunchTests.swift */,
+			);
+			path = "Updated GlidingUITests";
+			sourceTree = "<group>";
+		};
+		49DA87852B825DCA00350008 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		49DA87862B825DD100350008 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		49DA87872B825DD600350008 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87A02B826DDA00350008 /* API */,
+				49DA87962B825F5D00350008 /* DataStore */,
+				49DA87912B825F1400350008 /* SuppTypes */,
+				49DA87882B825DE300350008 /* MainTypes */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		49DA87882B825DE300350008 /* MainTypes */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87892B825DF200350008 /* Glider.swift */,
+				49DA878B2B825E1200350008 /* Location.swift */,
+				49DA878D2B825E2D00350008 /* Thermal.swift */,
+				49DA878F2B825E3E00350008 /* Flight.swift */,
+			);
+			path = MainTypes;
+			sourceTree = "<group>";
+		};
+		49DA87912B825F1400350008 /* SuppTypes */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87922B825F2200350008 /* AbsoluteBarometricAltitude.swift */,
+				49DA87942B825F2A00350008 /* RelativeBarometricAltitude.swift */,
+			);
+			path = SuppTypes;
+			sourceTree = "<group>";
+		};
+		49DA87962B825F5D00350008 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87972B825F7400350008 /* GliderStore.swift */,
+				49DA87992B825F7B00350008 /* FlightStore.swift */,
+				49DA879C2B8263EB00350008 /* GliderStoreError.swift */,
+				49DA879E2B8263F300350008 /* FlightStoreError.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		49DA87A02B826DDA00350008 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87A12B826DE700350008 /* APIBase.swift */,
+				49DA87A32B826DEE00350008 /* APIGlider.swift */,
+				49DA87A52B826DFA00350008 /* APIFlight.swift */,
+				49DA87A72B826E4F00350008 /* APIThermal.swift */,
+				49DA87A92B826E5D00350008 /* APIError.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49DA87562B825DB600350008 /* Updated Gliding */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DA877C2B825DB800350008 /* Build configuration list for PBXNativeTarget "Updated Gliding" */;
+			buildPhases = (
+				49DA87532B825DB600350008 /* Sources */,
+				49DA87542B825DB600350008 /* Frameworks */,
+				49DA87552B825DB600350008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Updated Gliding";
+			productName = "Updated Gliding";
+			productReference = 49DA87572B825DB600350008 /* Updated Gliding.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49DA87672B825DB800350008 /* Updated GlidingTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DA877F2B825DB800350008 /* Build configuration list for PBXNativeTarget "Updated GlidingTests" */;
+			buildPhases = (
+				49DA87642B825DB800350008 /* Sources */,
+				49DA87652B825DB800350008 /* Frameworks */,
+				49DA87662B825DB800350008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49DA876A2B825DB800350008 /* PBXTargetDependency */,
+			);
+			name = "Updated GlidingTests";
+			productName = "Updated GlidingTests";
+			productReference = 49DA87682B825DB800350008 /* Updated GlidingTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49DA87712B825DB800350008 /* Updated GlidingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49DA87822B825DB800350008 /* Build configuration list for PBXNativeTarget "Updated GlidingUITests" */;
+			buildPhases = (
+				49DA876E2B825DB800350008 /* Sources */,
+				49DA876F2B825DB800350008 /* Frameworks */,
+				49DA87702B825DB800350008 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49DA87742B825DB800350008 /* PBXTargetDependency */,
+			);
+			name = "Updated GlidingUITests";
+			productName = "Updated GlidingUITests";
+			productReference = 49DA87722B825DB800350008 /* Updated GlidingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49DA874F2B825DB600350008 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					49DA87562B825DB600350008 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					49DA87672B825DB800350008 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 49DA87562B825DB600350008;
+					};
+					49DA87712B825DB800350008 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 49DA87562B825DB600350008;
+					};
+				};
+			};
+			buildConfigurationList = 49DA87522B825DB600350008 /* Build configuration list for PBXProject "Updated Gliding" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49DA874E2B825DB600350008;
+			productRefGroup = 49DA87582B825DB600350008 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49DA87562B825DB600350008 /* Updated Gliding */,
+				49DA87672B825DB800350008 /* Updated GlidingTests */,
+				49DA87712B825DB800350008 /* Updated GlidingUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49DA87552B825DB600350008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA87632B825DB800350008 /* Preview Assets.xcassets in Resources */,
+				49DA875F2B825DB800350008 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA87662B825DB800350008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA87702B825DB800350008 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49DA87532B825DB600350008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
+				49DA878A2B825DF200350008 /* Glider.swift in Sources */,
+				49DA878E2B825E2D00350008 /* Thermal.swift in Sources */,
+				49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */,
+				49DA878C2B825E1200350008 /* Location.swift in Sources */,
+				49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */,
+				49DA87A22B826DE700350008 /* APIBase.swift in Sources */,
+				49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */,
+				49DA87A42B826DEE00350008 /* APIGlider.swift in Sources */,
+				49DA87902B825E3E00350008 /* Flight.swift in Sources */,
+				49DA87932B825F2200350008 /* AbsoluteBarometricAltitude.swift in Sources */,
+				49DA879A2B825F7B00350008 /* FlightStore.swift in Sources */,
+				49DA879D2B8263EB00350008 /* GliderStoreError.swift in Sources */,
+				49DA87AA2B826E5D00350008 /* APIError.swift in Sources */,
+				49DA87952B825F2A00350008 /* RelativeBarometricAltitude.swift in Sources */,
+				49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA87642B825DB800350008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA876D2B825DB800350008 /* Updated_GlidingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49DA876E2B825DB800350008 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49DA87772B825DB800350008 /* Updated_GlidingUITests.swift in Sources */,
+				49DA87792B825DB800350008 /* Updated_GlidingUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49DA876A2B825DB800350008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DA87562B825DB600350008 /* Updated Gliding */;
+			targetProxy = 49DA87692B825DB800350008 /* PBXContainerItemProxy */;
+		};
+		49DA87742B825DB800350008 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49DA87562B825DB600350008 /* Updated Gliding */;
+			targetProxy = 49DA87732B825DB800350008 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		49DA877A2B825DB800350008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49DA877B2B825DB800350008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		49DA877D2B825DB800350008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Updated Gliding/Updated_Gliding.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Updated Gliding/Preview Content\"";
+				DEVELOPMENT_TEAM = XQXW6778L7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrew.Updated-Gliding";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49DA877E2B825DB800350008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Updated Gliding/Updated_Gliding.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Updated Gliding/Preview Content\"";
+				DEVELOPMENT_TEAM = XQXW6778L7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrew.Updated-Gliding";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		49DA87802B825DB800350008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQXW6778L7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrew.Updated-GlidingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Updated Gliding.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Updated Gliding";
+			};
+			name = Debug;
+		};
+		49DA87812B825DB800350008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQXW6778L7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrew.Updated-GlidingTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Updated Gliding.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Updated Gliding";
+			};
+			name = Release;
+		};
+		49DA87832B825DB800350008 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQXW6778L7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrew.Updated-GlidingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Updated Gliding";
+			};
+			name = Debug;
+		};
+		49DA87842B825DB800350008 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQXW6778L7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrew.Updated-GlidingUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Updated Gliding";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49DA87522B825DB600350008 /* Build configuration list for PBXProject "Updated Gliding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DA877A2B825DB800350008 /* Debug */,
+				49DA877B2B825DB800350008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DA877C2B825DB800350008 /* Build configuration list for PBXNativeTarget "Updated Gliding" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DA877D2B825DB800350008 /* Debug */,
+				49DA877E2B825DB800350008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DA877F2B825DB800350008 /* Build configuration list for PBXNativeTarget "Updated GlidingTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DA87802B825DB800350008 /* Debug */,
+				49DA87812B825DB800350008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49DA87822B825DB800350008 /* Build configuration list for PBXNativeTarget "Updated GlidingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49DA87832B825DB800350008 /* Debug */,
+				49DA87842B825DB800350008 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49DA874F2B825DB600350008 /* Project object */;
+}
