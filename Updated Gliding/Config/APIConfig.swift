@@ -10,4 +10,8 @@ import Foundation
 struct APIConfig {
     static let url: String = "http://192.168.0.155"
     static let port: String = "3000"
+    
+    static let gliderRoute = "/glider-tracking/glider"
+    static let flightRoute = "/glider-tracking/flight"
+    static let thermalRoute = "/glider-tracking/thermal"
 }

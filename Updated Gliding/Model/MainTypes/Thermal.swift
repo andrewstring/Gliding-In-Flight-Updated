@@ -13,8 +13,12 @@ struct Thermal: Codable {
     let glider: Glider
     let detectedOn: String
     
-    var coordinate: CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude)
+    // Computed property for CLLocationCoordinate2D
+    var coordLocation: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(
+            latitude: location.latitude,
+            longitude: location.longitude
+        )
     }
 }
 

@@ -14,6 +14,7 @@ struct Location: Codable {
     let altitude: Double?
     let speed: Double?
     
+    // Computed property for CLLocationCoordinate2D
     var coordLocation: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(
             latitude: latitude,
