@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BB2B82E2E200919B86 /* APIBase.swift */; };
+		498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */; };
+		498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5C02B82E34900919B86 /* APIConfig.swift */; };
 		49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */; };
 		49DA875F2B825DB800350008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA875E2B825DB800350008 /* Assets.xcassets */; };
 		49DA87632B825DB800350008 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA87622B825DB800350008 /* Preview Assets.xcassets */; };
@@ -23,7 +26,7 @@
 		49DA879A2B825F7B00350008 /* FlightStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87992B825F7B00350008 /* FlightStore.swift */; };
 		49DA879D2B8263EB00350008 /* GliderStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA879C2B8263EB00350008 /* GliderStoreError.swift */; };
 		49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA879E2B8263F300350008 /* FlightStoreError.swift */; };
-		49DA87A22B826DE700350008 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A12B826DE700350008 /* APIBase.swift */; };
+		49DA87A22B826DE700350008 /* ADSB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A12B826DE700350008 /* ADSB.swift */; };
 		49DA87A42B826DEE00350008 /* APIGlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A32B826DEE00350008 /* APIGlider.swift */; };
 		49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A52B826DFA00350008 /* APIFlight.swift */; };
 		49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A72B826E4F00350008 /* APIThermal.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		498FC5BB2B82E2E200919B86 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSBConfig.swift; sourceTree = "<group>"; };
+		498FC5C02B82E34900919B86 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		49DA87572B825DB600350008 /* Updated Gliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Updated Gliding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingApp.swift; sourceTree = "<group>"; };
 		49DA875E2B825DB800350008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -68,7 +74,7 @@
 		49DA87992B825F7B00350008 /* FlightStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStore.swift; sourceTree = "<group>"; };
 		49DA879C2B8263EB00350008 /* GliderStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GliderStoreError.swift; sourceTree = "<group>"; };
 		49DA879E2B8263F300350008 /* FlightStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightStoreError.swift; sourceTree = "<group>"; };
-		49DA87A12B826DE700350008 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
+		49DA87A12B826DE700350008 /* ADSB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSB.swift; sourceTree = "<group>"; };
 		49DA87A32B826DEE00350008 /* APIGlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIGlider.swift; sourceTree = "<group>"; };
 		49DA87A52B826DFA00350008 /* APIFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFlight.swift; sourceTree = "<group>"; };
 		49DA87A72B826E4F00350008 /* APIThermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIThermal.swift; sourceTree = "<group>"; };
@@ -100,6 +106,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		498FC5BA2B82E2BE00919B86 /* ADSB */ = {
+			isa = PBXGroup;
+			children = (
+				49DA87A12B826DE700350008 /* ADSB.swift */,
+			);
+			path = ADSB;
+			sourceTree = "<group>";
+		};
+		498FC5BD2B82E30B00919B86 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */,
+				498FC5C02B82E34900919B86 /* APIConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		49DA874E2B825DB600350008 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +146,7 @@
 		49DA87592B825DB600350008 /* Updated Gliding */ = {
 			isa = PBXGroup;
 			children = (
+				498FC5BD2B82E30B00919B86 /* Config */,
 				49DA87872B825DD600350008 /* Model */,
 				49DA87862B825DD100350008 /* UIKit */,
 				49DA87852B825DCA00350008 /* SwiftUI */,
@@ -218,11 +242,12 @@
 		49DA87A02B826DDA00350008 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				49DA87A12B826DE700350008 /* APIBase.swift */,
+				498FC5BA2B82E2BE00919B86 /* ADSB */,
 				49DA87A32B826DEE00350008 /* APIGlider.swift */,
 				49DA87A52B826DFA00350008 /* APIFlight.swift */,
 				49DA87A72B826E4F00350008 /* APIThermal.swift */,
 				49DA87A92B826E5D00350008 /* APIError.swift */,
+				498FC5BB2B82E2E200919B86 /* APIBase.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -360,13 +385,16 @@
 				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
 				49DA878A2B825DF200350008 /* Glider.swift in Sources */,
 				49DA878E2B825E2D00350008 /* Thermal.swift in Sources */,
+				498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */,
 				49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */,
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
 				49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */,
-				49DA87A22B826DE700350008 /* APIBase.swift in Sources */,
+				49DA87A22B826DE700350008 /* ADSB.swift in Sources */,
 				49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */,
+				498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */,
 				49DA87A42B826DEE00350008 /* APIGlider.swift in Sources */,
 				49DA87902B825E3E00350008 /* Flight.swift in Sources */,
+				498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */,
 				49DA87932B825F2200350008 /* AbsoluteBarometricAltitude.swift in Sources */,
 				49DA879A2B825F7B00350008 /* FlightStore.swift in Sources */,
 				49DA879D2B8263EB00350008 /* GliderStoreError.swift in Sources */,
