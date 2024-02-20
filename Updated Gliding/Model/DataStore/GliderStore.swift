@@ -48,6 +48,7 @@ class GliderStore: ObservableObject {
         self.glider = try? await task.value
     }
     
+    @discardableResult
     func gliderSave(glider: Glider) async throws -> Glider? {
         let task = Task<Glider?, Error> {
             do {

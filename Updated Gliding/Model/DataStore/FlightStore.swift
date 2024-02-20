@@ -48,6 +48,7 @@ class FlightStore: ObservableObject {
         self.flight = try await task.value
     }
     
+    @discardableResult
     func flightSave(flight: Flight) async throws -> Flight? {
         let task = Task<Flight?, Error> {
             do {

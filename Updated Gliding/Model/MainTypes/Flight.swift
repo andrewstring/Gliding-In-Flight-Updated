@@ -7,7 +7,6 @@
 
 import Foundation
 
-@MainActor
 class Flight: Codable, ObservableObject {
     @Published var id: String
     @Published var name: String
@@ -17,15 +16,15 @@ class Flight: Codable, ObservableObject {
     let glider: Glider
     let dateOfFlight: String
     
-    var representation: String {
-        do {
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try jsonEncoder.encode(self)
-            return String(data: jsonData, encoding: String.Encoding.utf8)!
-        } catch {
-            return "ERROR"
-        }
-    }
+//    var representation: String {
+//        do {
+//            let jsonEncoder = JSONEncoder()
+//            let jsonData = try jsonEncoder.encode(self)
+//            return String(data: jsonData, encoding: String.Encoding.utf8)!
+//        } catch {
+//            return "ERROR"
+//        }
+//    }
     
     init(id: String, name: String, glider: Glider, dateOfFlight: String,
          locations: [Location], absoluteBarometricAltitudes: [AbsoluteBarometricAltitude], relativeBarometricAltitudes: [RelativeBarometricAltitude]) {
@@ -49,26 +48,33 @@ class Flight: Codable, ObservableObject {
     }
     
     required init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decode(String.self, forKey: .id)
-        name = try values.decode(String.self, forKey: .name)
-        glider = try values.decode(Glider.self, forKey: .glider)
-        dateOfFlight = try values.decode(String.self, forKey: .dateOfFlight)
-        locations = try values.decode([Location].self, forKey: .locations)
-        absoluteBarometricAltitudes = try values.decode([AbsoluteBarometricAltitude].self, forKey: .absoluteBarometricAltitudes)
-        relativeBarometricAltitudes = try values.decode([RelativeBarometricAltitude].self, forKey: .relativeBarometricAltitudes)
-        
+        do {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            id = try values.decode(String.self, forKey: .id)
+            name = try values.decode(String.self, forKey: .name)
+            glider = try values.decode(Glider.self, forKey: .glider)
+            dateOfFlight = try values.decode(String.self, forKey: .dateOfFlight)
+            locations = try values.decode([Location].self, forKey: .locations)
+            absoluteBarometricAltitudes = try values.decode([AbsoluteBarometricAltitude].self, forKey: .absoluteBarometricAltitudes)
+            relativeBarometricAltitudes = try values.decode([RelativeBarometricAltitude].self, forKey: .relativeBarometricAltitudes)
+        } catch {
+            throw error
+        }
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(id, forKey: .id)
-        try container.encode(name, forKey: .name)
-        try container.encode(glider, forKey: .glider)
-        try container.encode(dateOfFlight, forKey: .dateOfFlight)
-        try container.encode(locations, forKey: .locations)
-        try container.encode(absoluteBarometricAltitudes, forKey: .absoluteBarometricAltitudes)
-        try container.encode(relativeBarometricAltitudes, forKey: .relativeBarometricAltitudes)
+        do {
+            try container.encode(id, forKey: .id)
+            try container.encode(name, forKey: .name)
+            try container.encode(glider, forKey: .glider)
+            try container.encode(dateOfFlight, forKey: .dateOfFlight)
+            try container.encode(locations, forKey: .locations)
+            try container.encode(absoluteBarometricAltitudes, forKey: .absoluteBarometricAltitudes)
+            try container.encode(relativeBarometricAltitudes, forKey: .relativeBarometricAltitudes)
+        } catch {
+            throw error
+        }
     }
 }
 
