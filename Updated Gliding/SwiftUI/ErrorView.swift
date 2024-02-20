@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct ErrorView: View {
+    @State var errorMessage: String?
+    
     var body: some View {
-        @State var errorMessage: String?
-        
         if errorMessage != nil {
             Text(errorMessage!)
         } else {

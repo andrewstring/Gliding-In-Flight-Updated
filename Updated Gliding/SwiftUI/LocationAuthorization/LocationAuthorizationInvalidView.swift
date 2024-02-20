@@ -1,5 +1,5 @@
 //
-//  LocationAuthorizationInvalid.swift
+//  LocationAuthorizationInvalidView.swift
 //  Updated Gliding
 //
 //  Created by Andrew Stringfellow on 2/19/24.
@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct LocationAuthorizationInvalidView: View {
+    @State var invalidAuthorizationMessage: String?
+    
     var body: some View {
-        @State var invalidAuthorizationMessage String?
-        
         if invalidAuthorizationMessage != nil {
             Text(invalidAuthorizationMessage!)
         } else {

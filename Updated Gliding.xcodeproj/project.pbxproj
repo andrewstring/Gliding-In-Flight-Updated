@@ -24,7 +24,7 @@
 		494515E92B8443D500C77B49 /* GlidingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515E82B8443D500C77B49 /* GlidingMapViewController.swift */; };
 		494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */; };
 		494515ED2B84475000C77B49 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EC2B84475000C77B49 /* ErrorView.swift */; };
-		494515F02B84489C00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EF2B84489C00C77B49 /* LocationAuthorizationInvalidView.swift */; };
+		494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */; };
 		498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BB2B82E2E200919B86 /* APIBase.swift */; };
 		498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */; };
 		498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5C02B82E34900919B86 /* APIConfig.swift */; };
@@ -86,7 +86,7 @@
 		494515E82B8443D500C77B49 /* GlidingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewController.swift; sourceTree = "<group>"; };
 		494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationRequestView.swift; sourceTree = "<group>"; };
 		494515EC2B84475000C77B49 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		494515EF2B84489C00C77B49 /* LocationAuthorizationInvalidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationInvalidView.swift; sourceTree = "<group>"; };
+		494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationInvalidView.swift; sourceTree = "<group>"; };
 		498FC5BB2B82E2E200919B86 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSBConfig.swift; sourceTree = "<group>"; };
 		498FC5C02B82E34900919B86 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
@@ -200,7 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */,
-				494515EF2B84489C00C77B49 /* LocationAuthorizationInvalidView.swift */,
+				494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */,
 			);
 			path = LocationAuthorization;
 			sourceTree = "<group>";
@@ -501,6 +501,7 @@
 				498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */,
 				494515ED2B84475000C77B49 /* ErrorView.swift in Sources */,
 				49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */,
+				494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */,
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
 				49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */,
 				49DA87A22B826DE700350008 /* ADSB.swift in Sources */,
@@ -526,7 +527,6 @@
 				49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */,
 				494515E42B84439D00C77B49 /* GlidingMapViewRepresentable.swift in Sources */,
 				494515E12B8401A700C77B49 /* ThermalModalController.swift in Sources */,
-				494515F02B84489C00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */,
 				494515E62B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift in Sources */,
 				494515CB2B83C79900C77B49 /* BarometricModel.swift in Sources */,
 			);

@@ -20,7 +20,7 @@ struct Updated_GlidingApp: App {
                     LoginView()
                 }
             } else {
-                LocationAuthorizationRequest()
+                LocationAuthorizationRequestView()
             }
         }
     }
