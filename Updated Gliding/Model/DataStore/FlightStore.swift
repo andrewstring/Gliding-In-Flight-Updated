@@ -85,3 +85,33 @@ class FlightStore: ObservableObject {
         return try await task.value
     }
 }
+
+
+// Flight Management Functions
+extension FlightStore {
+    func createFlight(name: String, glider: Glider) {
+        let flight = Flight(
+            id: UUID().uuidString,
+            name: name,
+            glider: glider,
+            dateOfFlight: DateTime().toString(),
+            locations: [],
+            absoluteBarometricAltitudes: [],
+            relativeBarometricAltitudes: []
+        )
+        self.flight = flight
+    }
+    
+    func addNewLocationToFlight(newLocation: Location) throws {
+        
+    }
+    
+    func addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: AbsoluteBarometricAltitude) throws {
+        
+    }
+    
+    func addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: RelativeBarometricAltitude) throws {
+        
+    }
+    
+}

@@ -25,6 +25,10 @@
 		494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */; };
 		494515ED2B84475000C77B49 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EC2B84475000C77B49 /* ErrorView.swift */; };
 		494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */; };
+		4955574A2B8642FC007D8049 /* BarometricAltitudeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495557492B8642FC007D8049 /* BarometricAltitudeError.swift */; };
+		4955574C2B86512C007D8049 /* BottomGlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955574B2B86512C007D8049 /* BottomGlidingMapView.swift */; };
+		4955574E2B865135007D8049 /* TopGlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955574D2B865135007D8049 /* TopGlidingMapView.swift */; };
+		495557502B8655C6007D8049 /* BottomGlidingMapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955574F2B8655C6007D8049 /* BottomGlidingMapButtonView.swift */; };
 		4973931B2B859538005B433D /* GlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931A2B859538005B433D /* GlidingMapView.swift */; };
 		4973931D2B859F23005B433D /* GlidingMapViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */; };
 		4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */; };
@@ -92,6 +96,10 @@
 		494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationRequestView.swift; sourceTree = "<group>"; };
 		494515EC2B84475000C77B49 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationInvalidView.swift; sourceTree = "<group>"; };
+		495557492B8642FC007D8049 /* BarometricAltitudeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarometricAltitudeError.swift; sourceTree = "<group>"; };
+		4955574B2B86512C007D8049 /* BottomGlidingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomGlidingMapView.swift; sourceTree = "<group>"; };
+		4955574D2B865135007D8049 /* TopGlidingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGlidingMapView.swift; sourceTree = "<group>"; };
+		4955574F2B8655C6007D8049 /* BottomGlidingMapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomGlidingMapButtonView.swift; sourceTree = "<group>"; };
 		4973931A2B859538005B433D /* GlidingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapView.swift; sourceTree = "<group>"; };
 		4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlidingMapViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewControllerError.swift; sourceTree = "<group>"; };
@@ -222,6 +230,9 @@
 			isa = PBXGroup;
 			children = (
 				4973931A2B859538005B433D /* GlidingMapView.swift */,
+				4955574B2B86512C007D8049 /* BottomGlidingMapView.swift */,
+				4955574F2B8655C6007D8049 /* BottomGlidingMapButtonView.swift */,
+				4955574D2B865135007D8049 /* TopGlidingMapView.swift */,
 			);
 			path = GlidingMap;
 			sourceTree = "<group>";
@@ -367,6 +378,7 @@
 			children = (
 				49DA87922B825F2200350008 /* AbsoluteBarometricAltitude.swift */,
 				49DA87942B825F2A00350008 /* RelativeBarometricAltitude.swift */,
+				495557492B8642FC007D8049 /* BarometricAltitudeError.swift */,
 			);
 			path = SuppTypes;
 			sourceTree = "<group>";
@@ -541,6 +553,7 @@
 				494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */,
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
 				49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */,
+				4955574E2B865135007D8049 /* TopGlidingMapView.swift in Sources */,
 				49DA87A22B826DE700350008 /* ADSB.swift in Sources */,
 				49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */,
 				498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */,
@@ -552,7 +565,9 @@
 				494515D62B83DFC600C77B49 /* LocationError.swift in Sources */,
 				498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */,
 				494515E92B8443D500C77B49 /* GlidingMapViewController.swift in Sources */,
+				495557502B8655C6007D8049 /* BottomGlidingMapButtonView.swift in Sources */,
 				49DA87932B825F2200350008 /* AbsoluteBarometricAltitude.swift in Sources */,
+				4955574A2B8642FC007D8049 /* BarometricAltitudeError.swift in Sources */,
 				49DA879A2B825F7B00350008 /* FlightStore.swift in Sources */,
 				49DA879D2B8263EB00350008 /* GliderStoreError.swift in Sources */,
 				494515D22B83CC9200C77B49 /* DateTime.swift in Sources */,
@@ -565,6 +580,7 @@
 				49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */,
 				494515E42B84439D00C77B49 /* GlidingMapViewRepresentable.swift in Sources */,
 				494515E12B8401A700C77B49 /* ThermalModalController.swift in Sources */,
+				4955574C2B86512C007D8049 /* BottomGlidingMapView.swift in Sources */,
 				494515E62B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift in Sources */,
 				494515CB2B83C79900C77B49 /* BarometricModel.swift in Sources */,
 			);

@@ -12,6 +12,11 @@ struct AbsoluteBarometricAltitude: Codable {
     var absoluteAltitude: Double?
     var absoluteAccuracy: Double?
     var absolutePrecision: Double?
+    
+    func exceedsThresholdAltitude(newAbsoluteBarometricAltitude: AbsoluteBarometricAltitude) throws -> Bool {
+        guard self.absoluteAltitude != nil && newAbsoluteBarometricAltitude.absoluteAltitude != nil else { throw BarometricAltitudeError.ThresholdAltitudeCallWithoutAltitudeData }
+        return abs(self.absoluteAltitude! - newAbsoluteBarometricAltitude.absoluteAltitude!) > ServicesConfig.thresholdAltitude
+    }
 }
 
 struct AbsoluteBarometricAltitudeResponse: Decodable {

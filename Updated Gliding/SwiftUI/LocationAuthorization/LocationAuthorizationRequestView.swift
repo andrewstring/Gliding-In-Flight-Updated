@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct LocationAuthorizationRequestView: View {
-    @EnvironmentObject var navigationModel: NavigationModel
+    @EnvironmentObject var locationModel: LocationModel
     
     var body: some View {
-        let locationAuthorizationStatus = navigationModel.locationAuthorizationStatus
+        let locationAuthorizationStatus = locationModel.locationAuthorizationStatus
         switch locationAuthorizationStatus {
         case .authorizedAlways:
             // Should never enter this case

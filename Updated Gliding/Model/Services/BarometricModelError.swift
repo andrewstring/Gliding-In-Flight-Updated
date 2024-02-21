@@ -8,6 +8,6 @@
 import Foundation
 
 enum BarometricModelError: Error {
-    case StartingRecordingWithoutNavigationModelError
-    case HandlingAltitudeUpdateWithoutNavigationModelError
+    case AbsoluteAltitudeNotAvailableError
+    case RelativeAltitudeNotAvailableError
 }

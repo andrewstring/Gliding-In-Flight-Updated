@@ -11,4 +11,5 @@ struct ServicesConfig {
     static let activityType: CLActivityType = .automotiveNavigation
     
     static let thresholdDistance = 20.0
+    static let thresholdAltitude = 3.0
 }

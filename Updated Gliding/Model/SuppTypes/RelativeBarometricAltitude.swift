@@ -12,10 +12,10 @@ struct RelativeBarometricAltitude: Codable {
     var relativeAltitude: Double?
     var relativePressure: Double?
     
-    init(date: String, relativeAltitude: Double?, relativePressure: Double?) {
-        self.date = date
-        self.relativeAltitude = relativeAltitude
-        self.relativePressure = relativePressure
+    
+    func exceedsThresholdAltitude(newRelativeBarometricAltitude: RelativeBarometricAltitude) throws -> Bool {
+        guard self.relativeAltitude != nil && newRelativeBarometricAltitude.relativeAltitude != nil else { throw BarometricAltitudeError.ThresholdAltitudeCallWithoutAltitudeData }
+        return abs(self.relativeAltitude! - newRelativeBarometricAltitude.relativeAltitude!) > ServicesConfig.thresholdAltitude
     }
 }
 

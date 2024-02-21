@@ -30,21 +30,9 @@ class Location: Codable {
         self.speed = location.speed
     }
     
-    // Not a big fan of this...may delete
-    /*
-    init(coreLocation: CLLocation, date: String, latitude: Double, longitude: Double, altitude: Double? = nil, speed: Double? = nil) {
-        self.coreLocation = coreLocation
-        self.date = date
-        self.latitude = latitude
-        self.longitude = longitude
-        self.altitude = altitude
-        self.speed = speed
-    }
-     */
-    
-    func exceedsThresholdDistance(newLocation: CLLocation, threshold: CLLocationDistance) throws -> Bool {
+    func exceedsThresholdDistance(newLocation: CLLocation) throws -> Bool {
         return CLLocation(latitude: self.latitude, longitude: self.longitude)
-            .distance(from: newLocation) > threshold
+            .distance(from: newLocation) > ServicesConfig.thresholdDistance
     }
     
     // For Encodable and Decodable Conformance

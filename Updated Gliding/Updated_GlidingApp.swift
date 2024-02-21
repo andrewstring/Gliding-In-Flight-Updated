@@ -10,17 +10,27 @@ import SwiftUI
 @main
 struct Updated_GlidingApp: App {
     @StateObject var navigationModel = NavigationModel()
+    @StateObject var locationModel = LocationModel()
+    @StateObject var barometricModel = BarometricModel()
+    @StateObject var gliderStore = GliderStore()
+    @StateObject var flightStore = FlightStore()
     
     var body: some Scene {
         WindowGroup {
-            if navigationModel.locationAuthorizationStatus == .authorizedAlways {
-                if navigationModel.gliderStore.glider != nil {
-                    GlidingMapView().environmentObject(navigationModel)
+            if locationModel.locationAuthorizationStatus == .authorizedAlways {
+                if gliderStore.glider != nil {
+                    GlidingMapView()
+                    .background(Color(.black))
+                    .environmentObject(navigationModel)
+                    .environmentObject(locationModel)
                 } else {
-                    LoginView().environmentObject(navigationModel)
+                    LoginView()
+                    .background(Color(.black))
+                    .environmentObject(navigationModel)
+                    .environmentObject(gliderStore)
                 }
             } else {
-                LocationAuthorizationRequestView().environmentObject(navigationModel)
+                LocationAuthorizationRequestView().environmentObject(locationModel)
             }
         }
     }

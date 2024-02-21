@@ -8,10 +8,9 @@
 import CoreLocation
 
 class LocationModel: NSObject, ObservableObject {
-    @Published var currentLocation: CLLocation?
+    @Published var currentLocation: Location?
+    @Published var locationAuthorizationStatus: CLAuthorizationStatus = .notDetermined
     
-    @Published var navigationModel: NavigationModel? = nil
-    var mapState: MapState = .preFlight
     var locationManager: CLLocationManager
     
     override init() {
@@ -19,6 +18,13 @@ class LocationModel: NSObject, ObservableObject {
         self.locationManager.activityType = ServicesConfig.activityType
         
         super.init()
+        
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
+    }
+    
+    func requestLocation() {
+        self.locationManager.requestAlwaysAuthorization()
     }
 }
 
@@ -27,21 +33,22 @@ extension LocationModel: CLLocationManagerDelegate {
     
     // Ensure that auth status is always authorized. If not, request for it
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        guard self.navigationModel == nil else { print("ERROR: NO Navigation Model"); return }
-        self.navigationModel!.locationAuthorizationStatus = self.locationManager.authorizationStatus
-        if self.locationManager.authorizationStatus != .authorizedAlways {
-            self.locationManager.requestAlwaysAuthorization()
-        }
+        self.locationAuthorizationStatus = manager.authorizationStatus
     }
     
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let navigationModel = self.navigationModel else { print("ERROR: No Location Model"); return }
         guard let location = getLatestLocation(locations) else { return }
-        self.currentLocation = location
-        do {
-            try navigationModel.addNewLocationToFlight(newLocation: location)
-        } catch {
-            print(error.localizedDescription)
+        if self.currentLocation == nil {
+            self.currentLocation = Location(location)
+        } else {
+            do {
+                if try self.currentLocation!.exceedsThresholdDistance(newLocation: location) {
+                    self.currentLocation = Location(location)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
     

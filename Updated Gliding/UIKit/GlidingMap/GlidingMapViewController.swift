@@ -9,9 +9,11 @@ import UIKit
 import MapKit
 
 class GlidingMapViewController: UIViewController {
+    let navigationModel: NavigationModel
+    let locationModel: LocationModel
+    
     private let imageryMapConfig = MKImageryMapConfiguration()
     let mapView = MKMapView()
-    let navigationModel: NavigationModel
     var thermals: [Thermal] = []
     
     var mapState: MapState = .preFlight {
@@ -21,27 +23,30 @@ class GlidingMapViewController: UIViewController {
                 do {
                     try setPreFlight()
                 } catch {
-                    print(error.localizedDescription)
+                    print(error)
                 }
             case .inFlight:
                 do {
                     try setInFlight()
                 } catch {
-                    print(error.localizedDescription)
+                    print(error)
                 }
             case .postFlight:
                 do {
                     try setPostFlight()
                 } catch {
-                    print(error.localizedDescription)
+                    print(error)
                 }
             }
         }
     }
     
-    init(navigationModel: NavigationModel) {
+    init(navigationModel: NavigationModel, locationModel: LocationModel) {
         self.navigationModel = navigationModel
+        self.locationModel = locationModel
         super.init(nibName: nil, bundle: nil)
+        print("LOCATION")
+        print(locationModel.currentLocation)
     }
     
     required init?(coder: NSCoder) {
@@ -57,6 +62,12 @@ class GlidingMapViewController: UIViewController {
         self.mapView.delegate = self
         self.mapView.showsUserLocation = true
         self.mapView.preferredConfiguration = imageryMapConfig
+        
+        do {
+            try setPreFlight()
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -65,22 +76,22 @@ class GlidingMapViewController: UIViewController {
 extension GlidingMapViewController {
     
     func setPreFlight() throws {
-        guard let location = navigationModel.locationModel.currentLocation else { throw  GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000.0, longitudinalMeters: 10000.0)
+        guard let location = self.locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 10000.0, longitudinalMeters: 10000.0)
         self.mapView.showsCompass = false
         self.mapView.setRegion(region, animated: true)
     }
     
     func setInFlight() throws {
-        guard let location = navigationModel.locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 3000.0, longitudinalMeters: 3000.0)
+        guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 3000.0, longitudinalMeters: 3000.0)
         self.mapView.showsCompass = true
         self.mapView.setRegion(region, animated: true)
     }
     
     func setPostFlight() throws {
-        guard let location = navigationModel.locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 6000.0, longitudinalMeters: 6000.0)
+        guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 6000.0, longitudinalMeters: 6000.0)
         self.mapView.showsCompass = false
         self.mapView.setRegion(region, animated: true)
         
