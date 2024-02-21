@@ -11,7 +11,7 @@ struct LocationAuthorizationRequestView: View {
     @EnvironmentObject var navigationModel: NavigationModel
     
     var body: some View {
-        let locationAuthorizationStatus = navigationModel.locationModel.locationAuthorizationStatus
+        let locationAuthorizationStatus = navigationModel.locationAuthorizationStatus
         switch locationAuthorizationStatus {
         case .authorizedAlways:
             // Should never enter this case

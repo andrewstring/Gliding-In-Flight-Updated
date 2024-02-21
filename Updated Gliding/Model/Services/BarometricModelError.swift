@@ -9,4 +9,5 @@ import Foundation
 
 enum BarometricModelError: Error {
     case StartingRecordingWithoutNavigationModelError
+    case HandlingAltitudeUpdateWithoutNavigationModelError
 }

@@ -8,7 +8,6 @@
 import CoreLocation
 
 class Location: Codable {
-    let coreLocation: CLLocation?
     let date: String
     let latitude: Double
     let longitude: Double
@@ -24,7 +23,6 @@ class Location: Codable {
     }
     
     init(_ location: CLLocation) {
-        self.coreLocation = location
         self.date = DateTime().toString()
         self.latitude = location.coordinate.latitude
         self.longitude = location.coordinate.longitude
@@ -45,8 +43,8 @@ class Location: Codable {
      */
     
     func exceedsThresholdDistance(newLocation: CLLocation, threshold: CLLocationDistance) throws -> Bool {
-        guard let coreLocation = self.coreLocation else { throw LocationError.NoCoreLocationInLocationError }
-        return coreLocation.distance(from: newLocation) > threshold
+        return CLLocation(latitude: self.latitude, longitude: self.longitude)
+            .distance(from: newLocation) > threshold
     }
     
     // For Encodable and Decodable Conformance

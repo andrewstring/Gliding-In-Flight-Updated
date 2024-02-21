@@ -7,7 +7,10 @@
 
 import CoreMotion
 
-class BarometricModel {
+class BarometricModel: ObservableObject {
+    @Published var absoluteBarometricAltitude: AbsoluteBarometricAltitude?
+    @Published var relativeBarometricAltitude: RelativeBarometricAltitude?
+    
     let altimeter: CMAltimeter
     let operationQueue: OperationQueue
     var navigationModel: NavigationModel?
@@ -18,32 +21,42 @@ class BarometricModel {
     }
     
     func startAbsoluteAltitudeRecording() throws {
-        guard let navigationModel = self.navigationModel else { throw BarometricModelError.StartingRecordingWithoutNavigationModelError }
+        guard self.navigationModel != nil else { throw BarometricModelError.StartingRecordingWithoutNavigationModelError }
         if CMAltimeter.isAbsoluteAltitudeAvailable() {
-            self.altimeter.startAbsoluteAltitudeUpdates(to: self.operationQueue, withHandler: <#T##CMAbsoluteAltitudeHandler##CMAbsoluteAltitudeHandler##(CMAbsoluteAltitudeData?, Error?) -> Void#>)
+            self.altimeter.startAbsoluteAltitudeUpdates(to: self.operationQueue, withHandler: handleAbsoluteAltitudeUpdate)
             
         }
     }
     
     func startRelativeAltitudeRecording() throws {
-        guard let navigationModel = self.navigationModel else { throw BarometricModelError.StartingRecordingWithoutNavigationModelError }
+        guard self.navigationModel != nil else { throw BarometricModelError.StartingRecordingWithoutNavigationModelError }
         if CMAltimeter.isRelativeAltitudeAvailable() {
-            self.altimeter.startRelativeAltitudeUpdates(to: self.operationQueue, withHandler: <#T##CMAltitudeHandler##CMAltitudeHandler##(CMAltitudeData?, Error?) -> Void#>)
+            self.altimeter.startRelativeAltitudeUpdates(to: self.operationQueue, withHandler: handleRelativeAltitudeUpdate)
             
         }
     }
     
-    func handleAbsoluteAltitudeUpdate(_ altitudeData: CMAbsoluteAltitudeData?, _ errorOpt: (any Error)?) {
+    func handleAbsoluteAltitudeUpdate(_ absoluteAltitudeData: CMAbsoluteAltitudeData?, _ errorOpt: (any Error)?) {
         if let error = errorOpt { print(error.localizedDescription); return }
-        guard let navigationModel = self.navigationModel else { throw }
+        
+//        let newabsolutebarometricaltitude = absolutebarometricaltitude(
+//            date: DateTime().toString(),
+//            absoluteAltitude: absoluteAltitudeData?.altitude,
+//            absoluteAccuracy: absoluteAltitudeData?.accuracy,
+//            absolutePrecision: absoluteAltitudeData?.precision
+//        )
+//        self.absoluteBarometricAltitude = newAbsoluteBarometricAltitude
         
     }
     
-    func handleRelativeAltitudeUpdate(_ altitudeData: CMAltitudeData?, _ errorOpt: (any Error)?) {
+    func handleRelativeAltitudeUpdate(_ relativeAltitudeData: CMAltitudeData?, _ errorOpt: (any Error)?) {
         if let error = errorOpt { print(error.localizedDescription); return }
-        guard let navigationModel = self.navigationModel else { throw  }
         
+//        let newRelativeBarometricAltitude = RelativeBarometricAltitude(
+//            date: DateTime().toString(),
+//            relativeAltitude: relativeAltitudeData?.relativeAltitude,
+//            relativePressure: relativeAltitudeData?.pressure
+//        )
+//        self.relativeBarometricAltitude = newRelativeBarometricAltitude
     }
-    
-    
 }

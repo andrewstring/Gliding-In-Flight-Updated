@@ -14,8 +14,9 @@ class NavigationModel: ObservableObject {
         }
     }
     
-    let locationModel: LocationModel
-    let barometricModel: BarometricModel
+    @Published var locationModel: LocationModel
+    @Published var locationAuthorizationStatus: CLAuthorizationStatus = .notDetermined
+    @Published var barometricModel: BarometricModel
     let flightStore: FlightStore
     let gliderStore: GliderStore
     var flight: Flight?
@@ -28,7 +29,7 @@ class NavigationModel: ObservableObject {
         
         assignNavigationModelToOtherModels()
         // Must trigger barometric start AFTER assignNavigationModelToOtherModels
-        self.barometricModel.
+//        self.barometricModel.
     }
     
     func assignNavigationModelToOtherModels() {

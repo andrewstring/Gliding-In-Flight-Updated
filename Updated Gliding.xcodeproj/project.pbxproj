@@ -25,6 +25,9 @@
 		494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */; };
 		494515ED2B84475000C77B49 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EC2B84475000C77B49 /* ErrorView.swift */; };
 		494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */; };
+		4973931B2B859538005B433D /* GlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931A2B859538005B433D /* GlidingMapView.swift */; };
+		4973931D2B859F23005B433D /* GlidingMapViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */; };
+		4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */; };
 		498F6BE62B8520A4009A06AB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F6BE52B8520A4009A06AB /* LoginView.swift */; };
 		498F6BE82B8520AC009A06AB /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F6BE72B8520AC009A06AB /* CreateAccountView.swift */; };
 		498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BB2B82E2E200919B86 /* APIBase.swift */; };
@@ -89,6 +92,10 @@
 		494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationRequestView.swift; sourceTree = "<group>"; };
 		494515EC2B84475000C77B49 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationInvalidView.swift; sourceTree = "<group>"; };
+		4973931A2B859538005B433D /* GlidingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapView.swift; sourceTree = "<group>"; };
+		4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlidingMapViewController+Delegate.swift"; sourceTree = "<group>"; };
+		4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewControllerError.swift; sourceTree = "<group>"; };
+		497393202B85B290005B433D /* Updated-Gliding-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Updated-Gliding-Info.plist"; sourceTree = SOURCE_ROOT; };
 		498F6BE52B8520A4009A06AB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		498F6BE72B8520AC009A06AB /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		498FC5BB2B82E2E200919B86 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
@@ -196,6 +203,8 @@
 			isa = PBXGroup;
 			children = (
 				494515E82B8443D500C77B49 /* GlidingMapViewController.swift */,
+				4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */,
+				4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */,
 			);
 			path = GlidingMap;
 			sourceTree = "<group>";
@@ -207,6 +216,14 @@
 				494515F12B84498B00C77B49 /* LocationAuthorizationInvalidView.swift */,
 			);
 			path = LocationAuthorization;
+			sourceTree = "<group>";
+		};
+		497393192B859520005B433D /* GlidingMap */ = {
+			isa = PBXGroup;
+			children = (
+				4973931A2B859538005B433D /* GlidingMapView.swift */,
+			);
+			path = GlidingMap;
 			sourceTree = "<group>";
 		};
 		498F6BE42B852094009A06AB /* UserAuthentication */ = {
@@ -259,6 +276,7 @@
 		49DA87592B825DB600350008 /* Updated Gliding */ = {
 			isa = PBXGroup;
 			children = (
+				497393202B85B290005B433D /* Updated-Gliding-Info.plist */,
 				494515D02B83CC8A00C77B49 /* Util */,
 				494515C42B83C62000C77B49 /* TESTING */,
 				498FC5BD2B82E30B00919B86 /* Config */,
@@ -301,6 +319,7 @@
 		49DA87852B825DCA00350008 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				497393192B859520005B433D /* GlidingMap */,
 				498F6BE42B852094009A06AB /* UserAuthentication */,
 				494515EE2B84487200C77B49 /* LocationAuthorization */,
 				494515EC2B84475000C77B49 /* ErrorView.swift */,
@@ -507,14 +526,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				494515DA2B83FC2900C77B49 /* RouteOverview.swift in Sources */,
+				4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */,
 				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
 				494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */,
 				49DA878A2B825DF200350008 /* Glider.swift in Sources */,
 				49DA878E2B825E2D00350008 /* Thermal.swift in Sources */,
 				494515DF2B8400A100C77B49 /* ThermalAnnotation.swift in Sources */,
+				4973931B2B859538005B433D /* GlidingMapView.swift in Sources */,
 				498F6BE82B8520AC009A06AB /* CreateAccountView.swift in Sources */,
 				498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */,
 				494515ED2B84475000C77B49 /* ErrorView.swift in Sources */,
+				4973931D2B859F23005B433D /* GlidingMapViewController+Delegate.swift in Sources */,
 				49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */,
 				494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */,
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
@@ -708,6 +730,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Updated-Gliding-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App utilizes location to track flight and report thermals to other users";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "App utilizes location to track flight and report thermals to other users";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App utilizes location to track flight and report thermals to other users";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -746,6 +772,10 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Updated-Gliding-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App utilizes location to track flight and report thermals to other users";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "App utilizes location to track flight and report thermals to other users";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App utilizes location to track flight and report thermals to other users";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

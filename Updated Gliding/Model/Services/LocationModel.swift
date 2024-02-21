@@ -8,10 +8,9 @@
 import CoreLocation
 
 class LocationModel: NSObject, ObservableObject {
-    @Published var locationAuthorizationStatus: CLAuthorizationStatus = .notDetermined
     @Published var currentLocation: CLLocation?
     
-    var navigationModel: NavigationModel? = nil
+    @Published var navigationModel: NavigationModel? = nil
     var mapState: MapState = .preFlight
     var locationManager: CLLocationManager
     
@@ -20,8 +19,6 @@ class LocationModel: NSObject, ObservableObject {
         self.locationManager.activityType = ServicesConfig.activityType
         
         super.init()
-        
-        self.locationManager.delegate = self
     }
 }
 
@@ -30,8 +27,9 @@ extension LocationModel: CLLocationManagerDelegate {
     
     // Ensure that auth status is always authorized. If not, request for it
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        self.locationAuthorizationStatus = self.locationManager.authorizationStatus
-        if(self.locationAuthorizationStatus != .authorizedAlways) {
+        guard self.navigationModel == nil else { print("ERROR: NO Navigation Model"); return }
+        self.navigationModel!.locationAuthorizationStatus = self.locationManager.authorizationStatus
+        if self.locationManager.authorizationStatus != .authorizedAlways {
             self.locationManager.requestAlwaysAuthorization()
         }
     }

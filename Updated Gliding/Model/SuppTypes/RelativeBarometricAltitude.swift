@@ -11,6 +11,12 @@ struct RelativeBarometricAltitude: Codable {
     var date: String
     var relativeAltitude: Double?
     var relativePressure: Double?
+    
+    init(date: String, relativeAltitude: Double?, relativePressure: Double?) {
+        self.date = date
+        self.relativeAltitude = relativeAltitude
+        self.relativePressure = relativePressure
+    }
 }
 
 struct RelativeBarometricAltitudeResponse: Decodable {

@@ -12,9 +12,16 @@ struct LocationAuthorizationInvalidView: View {
     
     var body: some View {
         if invalidAuthorizationMessage != nil {
-            Text(invalidAuthorizationMessage!)
+            
+            VStack {
+                Image(systemName: "location.fill").font(.system(size: 60.0)).padding(.bottom, 20.0)
+                    .symbolEffect(.pulse, isActive: true)
+                Text(invalidAuthorizationMessage!).font(.headline)
+            }
+            .multilineTextAlignment(.center)
+            .padding(.horizontal, 20.0)
         } else {
-            Text("ERROR")
+            Text("ERROR").font(.headline).multilineTextAlignment(.center).padding(.horizontal, 20.0)
         }
     }
 }

@@ -9,7 +9,6 @@ import UIKit
 
 class ThermalModalController: UIViewController {
     let tableView: UITableView
-    let tableViewDataSource: ThermalModalDataSource
     let thermal: Thermal
     let thermalModalDataSource: ThermalModalDataSource
     
@@ -21,6 +20,7 @@ class ThermalModalController: UIViewController {
         self.thermal = thermal
         self.tableView = UITableView()
         self.thermalModalDataSource = ThermalModalDataSource(thermal: thermal)
+        super.init()
         setupTableView(thermal)
         self.setupModalView()
     }

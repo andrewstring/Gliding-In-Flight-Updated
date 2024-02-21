@@ -13,14 +13,14 @@ struct Updated_GlidingApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if navigationModel.locationModel.locationAuthorizationStatus == .authorizedAlways {
-                if navigationModel.gliderStore.glider {
-                    GlidingMapView()
+            if navigationModel.locationAuthorizationStatus == .authorizedAlways {
+                if navigationModel.gliderStore.glider != nil {
+                    GlidingMapView().environmentObject(navigationModel)
                 } else {
-                    LoginView()
+                    LoginView().environmentObject(navigationModel)
                 }
             } else {
-                LocationAuthorizationRequestView()
+                LocationAuthorizationRequestView().environmentObject(navigationModel)
             }
         }
     }

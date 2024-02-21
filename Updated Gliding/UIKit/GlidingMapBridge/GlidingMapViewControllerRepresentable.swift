@@ -13,22 +13,11 @@ struct GlidingMapViewControllerRepresentable: UIViewControllerRepresentable {
     // TRY Removing
     typealias UIViewControllerType = GlidingMapViewController
     
+    func makeUIViewController(context: Context) -> GlidingMapViewController {
+        return GlidingMapViewController(navigationModel: navigationModel)
+    }
     
-    /*
-     
-     
-     
-     Need to finish
-     
-     JKL
-     JKL
-     JKL
-     JKL
-     JKL
-     JKL
-     
-     
-     
-     
-     */
+    func updateUIViewController(_ uiViewController: GlidingMapViewController, context: Context) {
+        uiViewController.mapState = navigationModel.mapState
+    }
 }
