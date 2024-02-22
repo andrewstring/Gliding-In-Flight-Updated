@@ -15,12 +15,30 @@ struct TopGlidingMapView: View {
     }
     
     var body: some View {
-        Button(action: expandTopGlidingMapView, label: {
-            Image(systemName: "ellipsis.rectangle.fill")
-                .font(.system(.largeTitle))
-                .foregroundColor(.gray)
-        })
-        .frame(height: isExpanded ? 200.0 : 50.0)
+        VStack {
+            if isExpanded {
+                VStack {
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                    Button("JKLJKL", action: {print("JKL")})
+                }
+                .padding(.bottom, 20.0)
+                .font(.title2)
+            }
+            Button(action: expandTopGlidingMapView, label: {
+                Image(systemName: "ellipsis.rectangle.fill")
+                    .font(.system(.largeTitle))
+                    .foregroundColor(.gray)
+            })
+        }
+        .padding(.vertical, 20.0)
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @State private var username = ""
     @State private var password = ""
-    @EnvironmentObject var navigationModel: NavigationModel
+//    @EnvironmentObject var navigationModel: NavigationModel
     @EnvironmentObject var gliderStore: GliderStore
     
     private let signInButtonText = "SIGN IN"
@@ -42,10 +42,12 @@ struct LoginView: View {
                 
                 Label("Username", systemImage: "person.fill")
                 TextField("Username", text: $username, prompt: Text("Required"))
+                    .disableAutocorrection(true)
                     .padding(.bottom, 20.0)
                 
                 Label("Password", systemImage: "lock.fill")
                 TextField("Password", text: $password, prompt: Text("Required"))
+                    .disableAutocorrection(true)
                     .padding(.bottom, 20.0)
                 
                 HStack {

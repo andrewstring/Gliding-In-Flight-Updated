@@ -16,6 +16,15 @@ class Flight: Codable, ObservableObject {
     let glider: Glider
     let dateOfFlight: String
     
+    // Route Overview info
+    var distanceTraveled: Double = 0.0
+    var heightGained: Double = 0.0
+    var heightLost: Double = 0.0
+    var minLatitude: Double?
+    var maxLatitude: Double?
+    var minLongitude: Double?
+    var maxLongitude: Double?
+    
 //    var representation: String {
 //        do {
 //            let jsonEncoder = JSONEncoder()
@@ -35,6 +44,34 @@ class Flight: Codable, ObservableObject {
         self.locations = locations
         self.absoluteBarometricAltitudes = absoluteBarometricAltitudes
         self.relativeBarometricAltitudes = relativeBarometricAltitudes
+    }
+    
+    func addNewLocationToFlight(newLocation: Location) throws {
+        self.locations.append(newLocation)
+        if self.minLatitude == nil { self.minLatitude = newLocation.latitude }
+        if self.maxLatitude == nil { self.maxLatitude = newLocation.latitude }
+        if self.minLongitude == nil { self.minLongitude = newLocation.longitude }
+        if self.maxLongitude == nil { self.maxLongitude = newLocation.longitude }
+        if newLocation.latitude < self.minLatitude! {
+            self.minLatitude = newLocation.latitude
+        }
+        else if newLocation.latitude > self.maxLatitude! {
+            self.maxLatitude = newLocation.latitude
+        }
+        if newLocation.longitude < self.minLongitude! {
+            self.minLongitude = newLocation.longitude
+        }
+        else if newLocation.longitude > self.maxLongitude! {
+            self.maxLongitude = newLocation.longitude
+        }
+    }
+    
+    func addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: AbsoluteBarometricAltitude) throws {
+        
+    }
+    
+    func addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: RelativeBarometricAltitude) throws {
+        
     }
     
     enum CodingKeys: String, CodingKey {

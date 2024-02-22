@@ -15,11 +15,4 @@ struct RouteOverview {
         )
         return route
     }
-    
-    static func renderRouteOverview(overview: MKPolyline) -> MKPolylineRenderer {
-        let overviewRenderer = MKPolylineRenderer(polyline: overview)
-        overviewRenderer.strokeColor = .blue
-        overviewRenderer.lineWidth = 2.0
-        return overviewRenderer
-    }
 }

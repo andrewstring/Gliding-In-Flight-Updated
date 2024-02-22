@@ -10,4 +10,6 @@ import Foundation
 enum GlidingMapViewControllerError: Error {
     case HandlingMapStateUpdateWithoutLocationError
     case HandlingPostFlightMapStateUpdateWithoutFlightError
+    case StartingFlightWithoutLoadedGliderError
+    case StartingFlightWithoutLoadedFlightError
 }

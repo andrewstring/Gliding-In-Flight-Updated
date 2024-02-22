@@ -14,6 +14,15 @@ extension GlidingMapViewController: MKMapViewDelegate {
         self.mapView.deselectAnnotation(annotation, animated: false)
     }
     
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        if let routePolyline = overlay as? MKPolyline {
+            let renderer = MKPolylineRenderer(polyline: routePolyline)
+            renderer.strokeColor = .blue
+            renderer.lineWidth = 15
+            return renderer
+        }
+        return MKOverlayRenderer()
+    }
     
     func fetchThermalFromAnnotation(annotation: MKAnnotation) -> Thermal? {
         guard let thermalAnnotation = annotation as? ThermalAnnotation else { return nil }

@@ -102,16 +102,5 @@ extension FlightStore {
         self.flight = flight
     }
     
-    func addNewLocationToFlight(newLocation: Location) throws {
-        
-    }
-    
-    func addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: AbsoluteBarometricAltitude) throws {
-        
-    }
-    
-    func addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: RelativeBarometricAltitude) throws {
-        
-    }
     
 }

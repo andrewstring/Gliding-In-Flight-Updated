@@ -12,7 +12,13 @@ struct GlidingMapView: View {
     @EnvironmentObject var locationModel: LocationModel
     
     var body: some View {
-        TopGlidingMapView()
+        
+        switch navigationModel.mapState {
+        case .inFlight, .preFlight:
+            TopGlidingMapView()
+        case .postFlight:
+            TopPostFlightMetricsView()
+        }
         GlidingMapViewControllerRepresentable()
         BottomGlidingMapView()
     }

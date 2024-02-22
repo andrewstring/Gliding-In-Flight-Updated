@@ -9,28 +9,41 @@ import SwiftUI
 
 @main
 struct Updated_GlidingApp: App {
+    
     @StateObject var navigationModel = NavigationModel()
     @StateObject var locationModel = LocationModel()
     @StateObject var barometricModel = BarometricModel()
     @StateObject var gliderStore = GliderStore()
     @StateObject var flightStore = FlightStore()
+    @State var didAttach = false
+    
+    func attach() {
+        if !didAttach {
+            navigationModel.attach(locationModel, barometricModel, gliderStore, flightStore)
+            didAttach = true
+        }
+    }
     
     var body: some Scene {
         WindowGroup {
             if locationModel.locationAuthorizationStatus == .authorizedAlways {
                 if gliderStore.glider != nil {
                     GlidingMapView()
-                    .background(Color(.black))
                     .environmentObject(navigationModel)
                     .environmentObject(locationModel)
+                    .environmentObject(barometricModel)
+                    .environmentObject(gliderStore)
+                    .environmentObject(flightStore)
+                    .onAppear(perform: attach)
                 } else {
                     LoginView()
-                    .background(Color(.black))
-                    .environmentObject(navigationModel)
                     .environmentObject(gliderStore)
+                    .onAppear(perform: attach)
                 }
             } else {
-                LocationAuthorizationRequestView().environmentObject(locationModel)
+                LocationAuthorizationRequestView()
+                    .environmentObject(locationModel)
+                    .onAppear(perform: attach)
             }
         }
     }

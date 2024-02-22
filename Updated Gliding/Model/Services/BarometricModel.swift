@@ -10,6 +10,7 @@ import CoreMotion
 class BarometricModel: ObservableObject {
     @Published var absoluteBarometricAltitude: AbsoluteBarometricAltitude?
     @Published var relativeBarometricAltitude: RelativeBarometricAltitude?
+    var flightStore: FlightStore?
     
     let altimeter: CMAltimeter
     let operationQueue: OperationQueue
@@ -46,6 +47,14 @@ class BarometricModel: ObservableObject {
         )
         self.absoluteBarometricAltitude = newAbsoluteBarometricAltitude
         
+        guard let flight = self.flightStore?.flight else { return }
+        do {
+            try flight.addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: newAbsoluteBarometricAltitude)
+            print("ADDING ABSOLUTE")
+        } catch {
+            print(error.localizedDescription)
+        }
+        
     }
     
     func handleRelativeAltitudeUpdate(_ relativeAltitudeData: CMAltitudeData?, _ errorOpt: (any Error)?) {
@@ -57,5 +66,13 @@ class BarometricModel: ObservableObject {
             relativePressure: relativeAltitudeData?.pressure as? Double
         )
         self.relativeBarometricAltitude = newRelativeBarometricAltitude
+        
+        guard let flight = self.flightStore?.flight else { return }
+        do {
+            try flight.addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: newRelativeBarometricAltitude)
+            print("ADDING Relative")
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }

@@ -8,80 +8,59 @@
 import CoreLocation
 
 class NavigationModel: ObservableObject {
-    @Published var mapState: MapState = .preFlight
+    var locationModel: LocationModel?
+    var barometricModel: BarometricModel?
+    var gliderStore: GliderStore?
+    var flightStore: FlightStore?
     
-    var flight: Flight?
+    @Published var mapState: MapState = .preFlight {
+        didSet {
+            switch mapState {
+            case .preFlight:
+                if let locationModel = self.locationModel {
+                    locationModel.flightStore = nil
+                }
+                if let barometricModel = self.barometricModel {
+                    barometricModel.flightStore = nil
+                }
+            case .inFlight:
+                if let locationModel = self.locationModel {
+                    locationModel.flightStore = self.flightStore
+                }
+                if let barometricModel = self.barometricModel {
+                    barometricModel.flightStore = self.flightStore
+                }
+            case .postFlight:
+                if let locationModel = self.locationModel {
+                    locationModel.flightStore = nil
+                }
+                if let barometricModel = self.barometricModel {
+                    barometricModel.flightStore = nil
+                }
+            }
+        }
+    }
     
-    init() {
-//        self.locationModel = LocationModel()
-//        self.barometricModel = BarometricModel()
+    func attach(_ locationModel: LocationModel, _ barometricMode: BarometricModel, _ gliderStore: GliderStore, _ flightStore: FlightStore) {
+        self.locationModel = locationModel
+        self.barometricModel = barometricMode
+        self.gliderStore = gliderStore
+        self.flightStore = flightStore
         
-//        assignNavigationModelToOtherModels()
-        // Must trigger barometric start AFTER assignNavigationModelToOtherModels
-//        self.barometricModel.
-    }
-    
-//    func assignNavigationModelToOtherModels() {
-//        self.locationModel.navigationModel = self
-//        self.barometricModel.navigationModel = self
-//    }
-    
-    func createFlight(name: String, glider: Glider) {
-        let flight = Flight(
-            id: UUID().uuidString,
-            name: name,
-            glider: glider,
-            dateOfFlight: DateTime().toString(),
-            locations: [],
-            absoluteBarometricAltitudes: [],
-            relativeBarometricAltitudes: []
-        )
-        self.flight = flight
-    }
-    
-//    func addNewLocationToFlight(newLocation: CLLocation) throws {
-//        if self.mapState == .inFlight {
-//            guard let flight = self.flight else { throw NavigationModelError.AddingLocationWithNoFlightError }
-//            if let lastLocation = flight.locations.last {
-//                do {
-//                    if try lastLocation.exceedsThresholdDistance(newLocation: newLocation) {
-//                        flight.locations.append(Location(newLocation))
-//                    }
-//                } catch {
-//                    throw error
-//                }
-//            } else {
-//                flight.locations.append(Location(newLocation))
-//            }
-//            
-//            Task {
-//                try await self.flightStore.flightSave(flight: flight)
-//            }
-//        }
-    
-//    func startNavigation(flightName: String, glider: Glider) {
-//        self.mapState = MapState.inFlight
-//        self.createFlight(name: flightName, glider: glider)
-//    }
+        self.locationModel!.flightStore = flightStore
+        self.barometricModel!.flightStore = flightStore
+     }
     
     func startNavigation() {
         self.mapState = .inFlight
+        guard let glider = self.gliderStore?.glider else { print(NavigationModelError.StartingNavigationWithNoGliderError.localizedDescription); return }
+        guard let flightStore = self.flightStore else { print(NavigationModelError.StartingNavigtationWithNoFlightStoreError.localizedDescription); return }
+        flightStore.createFlight(name: "TEST", glider: glider)
     }
     
     func stopNavigation() {
         self.mapState = .postFlight
     }
-    
-//    func stopNavigation() async throws {
-//        self.mapState = .postFlight
-//        self.mapState = .postFlight
-//        do {
-//            guard let flight = self.flight else { throw NavigationModelError.StoppingNavigationWithNoFlightError }
-//            try await self.flightStore.flightSave(flight: flight)
-//        } catch {
-//            throw error
-//        }
-//    }
 }
 
 enum MapState {

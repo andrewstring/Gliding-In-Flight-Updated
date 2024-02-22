@@ -9,5 +9,9 @@ import Foundation
 
 enum NavigationModelError: Error {
     case AddingLocationWithNoFlightError
+    case StartingNavigationWithNoGliderError
+    case StartingNavigtationWithNoFlightStoreError
     case StoppingNavigationWithNoFlightError
+    case AttachingFlightStoreWithNoLocationModelError
+    
 }
