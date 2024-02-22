@@ -58,6 +58,10 @@ class NavigationModel: ObservableObject {
         flightStore.createFlight(name: "TEST", glider: glider)
     }
     
+    func startOverviewNavigation() {
+        print("Starting overview navigation")
+    }
+    
     func stopNavigation() {
         self.mapState = .postFlight
     }

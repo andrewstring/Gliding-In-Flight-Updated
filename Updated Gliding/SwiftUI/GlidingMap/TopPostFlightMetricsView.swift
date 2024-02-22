@@ -16,9 +16,6 @@ struct TopPostFlightMetricsView: View {
                 Text("Glider Name: \(flight.glider.name)")
                 Text("Date of Flight: \(flight.dateOfFlight)")
                 Text("Distance Traveled: \(flight.distanceTraveled)")
-                Text("Height Gained: \(flight.heightGained)")
-                Text("Height Lost: \(flight.heightLost)")
-                
                 if let minLatitude = flight.minLatitude {
                     Text("Min Latitude: \(minLatitude)")
                 }

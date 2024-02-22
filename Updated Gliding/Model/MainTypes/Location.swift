@@ -35,6 +35,15 @@ class Location: Codable {
             .distance(from: newLocation) > ServicesConfig.thresholdDistance
     }
     
+    static func exceedsThresholdDistance(distance: Double) throws -> Bool {
+        return distance > ServicesConfig.thresholdDistance
+        
+    }
+    
+    func distance(newLocation: CLLocation) throws -> Double {
+        return CLLocation(latitude: self.latitude, longitude: self.longitude).distance(from: newLocation)
+    }
+    
     // For Encodable and Decodable Conformance
     enum CodingKeys: String, CodingKey {
         case date

@@ -82,8 +82,6 @@ class GlidingMapViewController: UIViewController {
 extension GlidingMapViewController {
     
     func setPreFlight() throws {
-        print("JKL")
-        
         self.mapView.removeOverlays(self.mapView.overlays)
         
         guard let location = self.locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }

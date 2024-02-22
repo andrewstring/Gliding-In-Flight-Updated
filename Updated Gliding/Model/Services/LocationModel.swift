@@ -50,9 +50,10 @@ extension LocationModel: CLLocationManagerDelegate {
                 let lastLocation = flight.locations[flight.locations.count-1]
                 print("LAST")
                 print(lastLocation)
-                if try lastLocation.exceedsThresholdDistance(newLocation: location) {
-                    print("EXCEEDED")
+                let distance = try lastLocation.distance(newLocation: location)
+                if try Location.exceedsThresholdDistance(distance: distance) {
                     try flight.addNewLocationToFlight(newLocation: Location(location))
+                    flight.distanceTraveled += distance
                 }
             }
         } catch {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Flight: Codable, ObservableObject {
+class Flight: Codable, ObservableObject, Identifiable {
     @Published var id: String
     @Published var name: String
     @Published var locations: [Location]
@@ -17,9 +17,9 @@ class Flight: Codable, ObservableObject {
     let dateOfFlight: String
     
     // Route Overview info
+    var totalTime: Double = 0.0
     var distanceTraveled: Double = 0.0
-    var heightGained: Double = 0.0
-    var heightLost: Double = 0.0
+    var maxHeight: Double = 0.0
     var minLatitude: Double?
     var maxLatitude: Double?
     var minLongitude: Double?
@@ -31,7 +31,7 @@ class Flight: Codable, ObservableObject {
 //            let jsonData = try jsonEncoder.encode(self)
 //            return String(data: jsonData, encoding: String.Encoding.utf8)!
 //        } catch {
-//            return "ERROR"
+//            return "ERROR
 //        }
 //    }
     

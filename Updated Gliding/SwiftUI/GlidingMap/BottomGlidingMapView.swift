@@ -17,6 +17,7 @@ struct BottomGlidingMapView: View {
             switch navigationModel.mapState {
             case .preFlight:
                 BottomGlidingMapButtonView(text: "Start Flight", action: navigationModel.startNavigation)
+                BottomGlidingMapButtonView(text: "Start Overview Flight", action: navigationModel.startOverviewNavigation)
             case .inFlight:
                 BottomGlidingMapButtonView(text: "End Flight", action: navigationModel.stopNavigation)
             case .postFlight:
