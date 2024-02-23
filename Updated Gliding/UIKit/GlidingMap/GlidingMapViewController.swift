@@ -35,6 +35,12 @@ class GlidingMapViewController: UIViewController {
                 } catch {
                     print(error)
                 }
+            case .inOverviewFlight:
+                do {
+                    try setInOverviewFlight()
+                } catch {
+                    print(error)
+                }
             case .postFlight:
                 do {
                     try setPostFlight()
@@ -97,6 +103,18 @@ extension GlidingMapViewController {
         self.mapView.showsCompass = true
         self.mapView.setRegion(region, animated: true)
         self.mapView.setUserTrackingMode(.followWithHeading, animated: true)
+    }
+    
+    
+    // IN DEVELOPMENT
+    func setInOverviewFlight() throws {
+        self.mapView.removeOverlays(self.mapView.overlays)
+        
+        
+        guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 20000.0, longitudinalMeters: 20000.0)
+        self.mapView.showsCompass = true
+        self.mapView.setRegion(region, animated: true)
     }
     
     func setPostFlight() throws {

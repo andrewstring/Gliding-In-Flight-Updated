@@ -23,7 +23,7 @@ class NavigationModel: ObservableObject {
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = nil
                 }
-            case .inFlight:
+            case .inFlight, .inOverviewFlight:
                 if let locationModel = self.locationModel {
                     locationModel.flightStore = self.flightStore
                 }
@@ -59,7 +59,10 @@ class NavigationModel: ObservableObject {
     }
     
     func startOverviewNavigation() {
-        print("Starting overview navigation")
+        self.mapState = .inOverviewFlight
+        guard let glider = self.gliderStore?.glider else { print(NavigationModelError.StartingNavigationWithNoGliderError.localizedDescription); return }
+        guard let flightStore = self.flightStore else { print(NavigationModelError.StartingNavigtationWithNoFlightStoreError.localizedDescription); return }
+        flightStore.createFlight(name: "TEST", glider: glider)
     }
     
     func stopNavigation() {
@@ -70,5 +73,6 @@ class NavigationModel: ObservableObject {
 enum MapState {
     case preFlight
     case inFlight
+    case inOverviewFlight
     case postFlight
 }
