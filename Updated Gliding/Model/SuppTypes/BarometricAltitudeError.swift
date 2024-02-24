@@ -8,5 +8,8 @@
 import Foundation
 
 enum BarometricAltitudeError: Error {
-    case ThresholdAltitudeCallWithoutAltitudeData
+    case ThresholdAltitudeCallWithoutAltitudeDataError
+    
+    case AltitudeDeltaCalculationWithNoRelativeAltitudeError
+    case AltitudeDeltaCalculationWithNoAbsoluteAltitudeError
 }

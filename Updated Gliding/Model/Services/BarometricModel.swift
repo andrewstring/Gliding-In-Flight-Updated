@@ -49,8 +49,17 @@ class BarometricModel: ObservableObject {
         
         guard let flight = self.flightStore?.flight else { return }
         do {
-            try flight.addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: newAbsoluteBarometricAltitude)
-            print("ADDING ABSOLUTE")
+            if flight.absoluteBarometricAltitudes.count < 1 {
+                print("ADDING ON 0")
+                try flight.addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: newAbsoluteBarometricAltitude)
+            } else {
+                let lastAbsoluteBarometricAltitude = flight.absoluteBarometricAltitudes[flight.absoluteBarometricAltitudes.count-1]
+                let altitudeDelta = try lastAbsoluteBarometricAltitude.altitudeDelta(newAbsoluteBarometricAltitude: newAbsoluteBarometricAltitude)
+                if try AbsoluteBarometricAltitude.exceedsThresholdAltitudeDelta(altitudeDelta: altitudeDelta) {
+                    try flight.addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: newAbsoluteBarometricAltitude)
+                    flight.absoluteBarometricHeightGained += altitudeDelta
+                }
+            }
         } catch {
             print(error.localizedDescription)
         }
@@ -69,8 +78,17 @@ class BarometricModel: ObservableObject {
         
         guard let flight = self.flightStore?.flight else { return }
         do {
-            try flight.addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: newRelativeBarometricAltitude)
-            print("ADDING Relative")
+            if flight.relativeBarometricAltitudes.count < 1 {
+                print("ADDING ON 0")
+                try flight.addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: newRelativeBarometricAltitude)
+            } else {
+                let lastRelativeBarometricAltitude = flight.relativeBarometricAltitudes[flight.relativeBarometricAltitudes.count-1]
+                let altitudeDelta = try lastRelativeBarometricAltitude.altitudeDelta(newRelativeBarometricAltitude: newRelativeBarometricAltitude)
+                if try RelativeBarometricAltitude.exceedsThresholdAltitudeDelta(altitudeDelta: altitudeDelta) {
+                    try flight.addNewRelativeBarometricAltitudeToFlight(newRelativeBarometricAltitude: newRelativeBarometricAltitude)
+                    flight.relativeBarometricHeightGained += altitudeDelta
+                }
+            }
         } catch {
             print(error.localizedDescription)
         }

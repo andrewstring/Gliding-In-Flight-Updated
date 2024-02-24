@@ -11,7 +11,7 @@ class Location: Codable {
     let date: String
     let latitude: Double
     let longitude: Double
-    let altitude: Double?
+    let altitude: Double
     let speed: Double?
     
     // Computed property for CLLocationCoordinate2D
@@ -42,6 +42,21 @@ class Location: Codable {
     
     func distance(newLocation: CLLocation) throws -> Double {
         return CLLocation(latitude: self.latitude, longitude: self.longitude).distance(from: newLocation)
+    }
+    
+    
+    
+    func exceedsThresholdAltitudeDelta(newLocation: CLLocation) throws -> Bool {
+        return abs(self.altitude - newLocation.altitude) > ServicesConfig.thresholdGPSAltitude
+    }
+    
+    static func exceedsThresholdAltitudeDelta(altitudeDelta: Double) throws -> Bool {
+        return altitudeDelta > ServicesConfig.thresholdGPSAltitude
+        
+    }
+    
+    func altitudeDelta(newLocation: CLLocation) throws -> Double {
+        return abs(newLocation.altitude - self.altitude)
     }
     
     // For Encodable and Decodable Conformance

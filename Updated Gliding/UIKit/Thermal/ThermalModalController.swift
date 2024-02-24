@@ -68,7 +68,7 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
         case (0,5):
             cell.textLabel!.text = String(format: "Longitude: %f", thermal.location.longitude)
         case (0,6):
-            cell.textLabel!.text = String(format: "Altitude: %f", thermal.location.altitude!)
+            cell.textLabel!.text = String(format: "Altitude: %f", thermal.location.altitude)
         default:
             cell.textLabel!.text = " "
         }

@@ -91,7 +91,7 @@ extension GlidingMapViewController {
         self.mapView.removeOverlays(self.mapView.overlays)
         
         guard let location = self.locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 10000.0, longitudinalMeters: 10000.0)
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.preFlightZoom, longitudinalMeters: GlidingMapViewConfig.preFlightZoom)
         self.mapView.setRegion(region, animated: true)
     }
     
@@ -99,7 +99,7 @@ extension GlidingMapViewController {
         self.mapView.removeOverlays(self.mapView.overlays)
         
         guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 3000.0, longitudinalMeters: 3000.0)
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.inFlightZoom, longitudinalMeters: GlidingMapViewConfig.inFlightZoom)
         self.mapView.showsCompass = true
         self.mapView.setRegion(region, animated: true)
         self.mapView.setUserTrackingMode(.followWithHeading, animated: true)
@@ -112,21 +112,20 @@ extension GlidingMapViewController {
         
         
         guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 20000.0, longitudinalMeters: 20000.0)
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.inOverviewFlightZoom, longitudinalMeters: GlidingMapViewConfig.inOverviewFlightZoom)
         self.mapView.showsCompass = true
         self.mapView.setRegion(region, animated: true)
     }
     
     func setPostFlight() throws {
         guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: 6000.0, longitudinalMeters: 6000.0)
+        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.postFlightZoom, longitudinalMeters: GlidingMapViewConfig.postFlightZoom)
         self.mapView.showsCompass = false
         self.mapView.setRegion(region, animated: true)
         
         guard let flight = self.flightStore.flight else { throw GlidingMapViewControllerError.HandlingPostFlightMapStateUpdateWithoutFlightError }
         self.mapView.addOverlay(RouteOverview.generateRouteOverview(locations: flight.locations), level: .aboveLabels)
         if flight.locations.count > 0 {
-            print("OVER")
             self.mapView.setCenter(flight.locations[0].coordLocation, animated: true)
         }
     }

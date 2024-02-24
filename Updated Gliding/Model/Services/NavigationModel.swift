@@ -68,6 +68,19 @@ class NavigationModel: ObservableObject {
     func stopNavigation() {
         self.mapState = .postFlight
     }
+    
+    func setPreNavigation() {
+        self.mapState = .preFlight
+    }
+    
+    func sendFlight() {
+        print("SEND FLIGHT")
+        
+        // SEND VIA DATABASE
+        guard let flightStore = self.flightStore else { return }
+        guard let flight = flightStore.flight else { return }
+        print(flight)
+    }
 }
 
 enum MapState {
