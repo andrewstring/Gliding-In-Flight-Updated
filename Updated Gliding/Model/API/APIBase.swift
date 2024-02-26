@@ -16,7 +16,7 @@ struct APIBase {
     }
 
     static func getRequest<T: Decodable>(path: String, responseType: T.Type) {
-        let url: URL = URL(string: "\(APIConfig.url):\(APIConfig.port)\(path)")!
+        let url: URL = URL(string: "\(APIConfig.prot)://\(APIConfig.url):\(APIConfig.port)\(path)")!
         var request: URLRequest = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -25,18 +25,19 @@ struct APIBase {
         // Get request does not have a body
         request.httpBody = nil
         
-        URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
-            if error != nil {
+        let task = URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
+            if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
                 print("DECODED DATA")
                 print(decodedData)
             }
         }
+        task.resume()
     }
     
     static func postRequest<T: Decodable>(path: String, responseType: T.Type, requestData: Encodable) throws {
-        let url: URL = URL(string: "\(APIConfig.url):\(APIConfig.port)\(path)")!
+        let url: URL = URL(string: "\(APIConfig.prot)://\(APIConfig.url):\(APIConfig.port)\(path)")!
         var request: URLRequest = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -46,17 +47,18 @@ struct APIBase {
         request.httpBody = bodyData
         
         let task = URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
-            if error != nil {
+            if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
                 print("DECODED DATA")
                 print(decodedData)
             }
         }
+        task.resume()
     }
     
     static func putRequest<T: Decodable>(path: String, responseType: T.Type, requestData: Encodable) throws {
-        let url: URL = URL(string: "\(APIConfig.url):\(APIConfig.port)\(path)")!
+        let url: URL = URL(string: "\(APIConfig.prot)://\(APIConfig.url):\(APIConfig.port)\(path)")!
         var request: URLRequest = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -65,18 +67,19 @@ struct APIBase {
         guard let bodyData = try? JSONEncoder().encode(requestData) else { throw APIError.PutRequestInvalideRequestData }
         request.httpBody = bodyData
         
-        URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
-            if error != nil {
+        let task = URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
+            if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
                 print("DECODED DATA")
                 print(decodedData)
             }
         }
+        task.resume()
     }
     
     static func deleteRequest<T: Decodable>(path: String, responseType: T.Type, requestData: Encodable) throws {
-        let url: URL = URL(string: "\(APIConfig.url):\(APIConfig.port)\(path)")!
+        let url: URL = URL(string: "\(APIConfig.prot)://\(APIConfig.url):\(APIConfig.port)\(path)")!
         var request: URLRequest = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -86,13 +89,14 @@ struct APIBase {
         guard let bodyData = try? JSONEncoder().encode(requestData) else { throw APIError.DeleteRequestInvalideRequestData }
         request.httpBody = bodyData
         
-        URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
-            if error != nil {
+        let task = URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
+            if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
                 print("DECODED DATA")
                 print(decodedData)
             }
         }
+        task.resume()
     }
 }

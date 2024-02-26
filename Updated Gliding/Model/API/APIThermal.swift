@@ -18,6 +18,7 @@ struct APIThermal {
     
     // Get By Radius Request
     static func getThermalByRadius(latitude: Double, longitude: Double) {
+        print("GETTHERMALBYRADIUS")
         APIBase.getRequest(path: "\(thermalRadiusRoute)?lat=\(latitude)&long=\(longitude)", responseType: ThermalResponse.self)
     }
     

@@ -66,6 +66,11 @@ class GlidingMapViewController: UIViewController {
     
     override func viewDidLoad() {
         initMap()
+        guard let currentLocation = locationModel.currentLocation else { return }
+        print("LATLONG")
+        print(currentLocation.latitude)
+        print(currentLocation.longitude)
+        APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
     }
     
     func initMap() {

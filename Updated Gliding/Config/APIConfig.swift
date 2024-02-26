@@ -8,7 +8,9 @@
 import Foundation
 
 struct APIConfig {
-    static let url: String = "http://192.168.0.155"
+//    static let url: String = "http://192.168.0.255"
+    static let prot: String = "http"
+    static let url: String = "localhost"
     static let port: String = "3000"
     
     static let gliderRoute = "/glider-tracking/glider"
