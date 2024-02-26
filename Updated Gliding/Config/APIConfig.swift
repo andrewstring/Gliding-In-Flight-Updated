@@ -14,4 +14,5 @@ struct APIConfig {
     static let gliderRoute = "/glider-tracking/glider"
     static let flightRoute = "/glider-tracking/flight"
     static let thermalRoute = "/glider-tracking/thermal"
+    static let thermalRadiusRoute = thermalRoute + "/radius"
 }

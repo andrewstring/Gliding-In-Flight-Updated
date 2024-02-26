@@ -8,29 +8,37 @@
 import Foundation
 
 struct APIFlight {
-    static let gliderRoute = APIConfig.gliderRoute
+    static let flightRoute = APIConfig.flightRoute
     
     // Get Request
     static func getFlight(flightId: String) {
-        APIBase.getRequest(path: Self.gliderRoute, responseType: FlightResponse.self)
+        APIBase.getRequest(path: "\(flightRoute)?id=\(flightId)", responseType: FlightResponse.self)
     }
     
     // Post Request
     static func addFlight(flightData: Flight) throws {
         do {
-            try APIBase.postRequest(path: Self.gliderRoute, responseType: FlightResponse.self, requestData: flightData)
+            try APIBase.postRequest(path: flightRoute, responseType: FlightResponse.self, requestData: flightData)
         } catch {
             throw error
         }
     }
     
     // Put Request
-    static func updateFlight(flightData: Flight) throws {
-        
+    static func updateFlight(flightId: String, flightData: Flight) throws {
+        do {
+            try APIBase.putRequest(path: "\(flightRoute)?id=\(flightId)", responseType: FlightResponse.self, requestData: flightData)
+        } catch {
+            throw error
+        }
     }
     
     // Delete Request
-    static func deleteFlight(flightId: String) {
-        
+    static func deleteFlight(flightData: Flight) throws {
+        do {
+            try APIBase.deleteRequest(path: flightRoute, responseType: FlightResponse.self, requestData: flightData)
+        } catch {
+            throw error
+        }
     }
 }
