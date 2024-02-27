@@ -70,7 +70,8 @@ class GlidingMapViewController: UIViewController {
         print("LATLONG")
         print(currentLocation.latitude)
         print(currentLocation.longitude)
-        APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude)
+        print("111")
+        APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude, callback: addThermalCallback)
     }
     
     func initMap() {
@@ -140,7 +141,9 @@ extension GlidingMapViewController {
 extension GlidingMapViewController {
     func addThermalAnnotations(thermals: [Thermal]) {
         self.thermals.append(contentsOf: thermals)
-        self.mapView.addAnnotations(thermals.map({ ThermalAnnotation(thermal: $0) }))
+        DispatchQueue.main.async {
+            self.mapView.addAnnotations(thermals.map({ ThermalAnnotation(thermal: $0) }))
+        }
     }
     
     func removeThermalAnnotation(thermals: [Thermal]) {
@@ -162,5 +165,10 @@ extension GlidingMapViewController {
             }
         }
         self.mapView.removeAnnotations(annotationsToRemove)
+    }
+    
+    func addThermalCallback(data: Any) {
+        guard let thermalMultiResponse = data as? ThermalMultiResponse else { return }
+        addThermalAnnotations(thermals: thermalMultiResponse.data)
     }
 }

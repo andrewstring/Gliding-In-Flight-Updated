@@ -20,7 +20,7 @@ class ThermalModalController: UIViewController {
         self.thermal = thermal
         self.tableView = UITableView()
         self.thermalModalDataSource = ThermalModalDataSource(thermal: thermal)
-        super.init()
+        super.init(nibName: nil, bundle: nil)
         setupTableView(thermal)
         self.setupModalView()
     }
@@ -57,7 +57,7 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
             cell.textLabel!.text = "Occurance Info"
             cell.textLabel!.font = UIFont.boldSystemFont(ofSize: 30.0)
         case (0, 1):
-            cell.textLabel!.text = String(format: "Glider Name: %@", thermal.glider.name)
+            cell.textLabel!.text = String(format: "Glider Name: %@", /*thermal.glider.name*/ "JKLJKL")
         case (0,2):
             cell.textLabel!.text = String(format: "Recorded On: %@", thermal.detectedOn)
         case (0,3):

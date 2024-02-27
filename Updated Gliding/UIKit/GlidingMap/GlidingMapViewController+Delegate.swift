@@ -8,6 +8,7 @@
 import MapKit
 
 extension GlidingMapViewController: MKMapViewDelegate {
+    @MainActor
     func mapView(_ mapView: MKMapView, didSelect annotation: MKAnnotation) {
         guard let thermal = fetchThermalFromAnnotation(annotation: annotation) else { return }
         self.present(ThermalModalController(thermal), animated: true)

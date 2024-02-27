@@ -15,7 +15,7 @@ struct APIBase {
         case DELETE = "DELETE"
     }
 
-    static func getRequest<T: Decodable>(path: String, responseType: T.Type) {
+    static func getRequest<T: Decodable>(path: String, responseType: T.Type, callback: ((Any) -> Void)? = nil) {
         let url: URL = URL(string: "\(APIConfig.prot)://\(APIConfig.url):\(APIConfig.port)\(path)")!
         var request: URLRequest = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -27,10 +27,15 @@ struct APIBase {
         
         let task = URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
             if error == nil {
+                print("333")
                 guard let data = dataOpt else { return }
+                print("444")
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
                 print("DECODED DATA")
                 print(decodedData)
+                if callback != nil {
+                    callback!(decodedData)
+                }
             }
         }
         task.resume()

@@ -10,7 +10,7 @@ import CoreLocation
 struct Thermal: Codable {
     let id: String
     let location: Location
-    let glider: Glider
+    let glider: Glider?
     let detectedOn: String
     
     // Computed property for CLLocationCoordinate2D
@@ -25,4 +25,9 @@ struct Thermal: Codable {
 struct ThermalResponse: Decodable {
     let message: String
     let data: Thermal?
+}
+
+struct ThermalMultiResponse: Decodable {
+    let message: String
+    let data: [Thermal]
 }
