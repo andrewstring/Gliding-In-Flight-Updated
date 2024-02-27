@@ -60,6 +60,7 @@
 		49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A52B826DFA00350008 /* APIFlight.swift */; };
 		49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A72B826E4F00350008 /* APIThermal.swift */; };
 		49DA87AA2B826E5D00350008 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A92B826E5D00350008 /* APIError.swift */; };
+		49FA7F8D2B8D8A68008927D4 /* Mongo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FA7F8C2B8D8A68008927D4 /* Mongo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		49DA87A52B826DFA00350008 /* APIFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFlight.swift; sourceTree = "<group>"; };
 		49DA87A72B826E4F00350008 /* APIThermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIThermal.swift; sourceTree = "<group>"; };
 		49DA87A92B826E5D00350008 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		49FA7F8C2B8D8A68008927D4 /* Mongo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mongo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +360,7 @@
 		49DA87872B825DD600350008 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49FA7F8B2B8D8A5E008927D4 /* DB */,
 				494515C72B83C78800C77B49 /* Services */,
 				49DA87A02B826DDA00350008 /* API */,
 				49DA87962B825F5D00350008 /* DataStore */,
@@ -411,6 +414,14 @@
 				498FC5BB2B82E2E200919B86 /* APIBase.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		49FA7F8B2B8D8A5E008927D4 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				49FA7F8C2B8D8A68008927D4 /* Mongo.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,6 +512,9 @@
 				Base,
 			);
 			mainGroup = 49DA874E2B825DB600350008;
+			packageReferences = (
+				49FA7F8E2B8D8B82008927D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 49DA87582B825DB600350008 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -543,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49FA7F8D2B8D8A68008927D4 /* Mongo.swift in Sources */,
 				494515DA2B83FC2900C77B49 /* RouteOverview.swift in Sources */,
 				4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */,
 				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
@@ -955,6 +970,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49FA7F8E2B8D8B82008927D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 49DA874F2B825DB600350008 /* Project object */;
 }

@@ -141,7 +141,7 @@ extension GlidingMapViewController {
 extension GlidingMapViewController {
     func addThermalAnnotations(thermals: [Thermal]) {
         self.thermals.append(contentsOf: thermals)
-        DispatchQueue.main.async {
+        DispatchQueue.main.sync {
             self.mapView.addAnnotations(thermals.map({ ThermalAnnotation(thermal: $0) }))
         }
     }
