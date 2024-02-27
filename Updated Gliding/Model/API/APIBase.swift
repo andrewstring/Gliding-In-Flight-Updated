@@ -27,12 +27,10 @@ struct APIBase {
         
         let task = URLSession.shared.dataTask(with: request) {(dataOpt, response, error) in
             if error == nil {
-                print("333")
                 guard let data = dataOpt else { return }
-                print("444")
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
-                print("DECODED DATA")
-                print(decodedData)
+//                print("DECODED DATA")
+//                print(decodedData)
                 if callback != nil {
                     callback!(decodedData)
                 }
@@ -55,8 +53,8 @@ struct APIBase {
             if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
-                print("DECODED DATA")
-                print(decodedData)
+//                print("DECODED DATA")
+//                print(decodedData)
             }
         }
         task.resume()
@@ -76,8 +74,8 @@ struct APIBase {
             if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
-                print("DECODED DATA")
-                print(decodedData)
+//                print("DECODED DATA")
+//                print(decodedData)
             }
         }
         task.resume()
@@ -98,8 +96,8 @@ struct APIBase {
             if error == nil {
                 guard let data = dataOpt else { return }
                 guard let decodedData = try? JSONDecoder().decode(responseType, from: data) else { return }
-                print("DECODED DATA")
-                print(decodedData)
+//                print("DECODED DATA")
+//                print(decodedData)
             }
         }
         task.resume()

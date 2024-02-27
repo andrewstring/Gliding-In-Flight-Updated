@@ -101,6 +101,4 @@ extension FlightStore {
         )
         self.flight = flight
     }
-    
-    
 }

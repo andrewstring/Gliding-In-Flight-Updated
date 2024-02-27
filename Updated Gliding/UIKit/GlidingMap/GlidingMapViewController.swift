@@ -15,6 +15,8 @@ class GlidingMapViewController: UIViewController {
     let flightStore: FlightStore
     let gliderStore: GliderStore
     
+    var socketConnection: SocketConnection? = nil
+    
     
     private let imageryMapConfig = MKImageryMapConfiguration()
     let mapView = MKMapView()
@@ -67,11 +69,8 @@ class GlidingMapViewController: UIViewController {
     override func viewDidLoad() {
         initMap()
         guard let currentLocation = locationModel.currentLocation else { return }
-        print("LATLONG")
-        print(currentLocation.latitude)
-        print(currentLocation.longitude)
-        print("111")
         APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude, callback: addThermalCallback)
+        self.socketConnection = SocketConnection()
     }
     
     func initMap() {

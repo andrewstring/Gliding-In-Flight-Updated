@@ -19,18 +19,6 @@ struct TopPostFlightMetricsView: View {
                 Text("GPS Altitude Gained: \(flight.gpsHeightGained)")
                 Text("Absolute Altitude Gained: \(flight.absoluteBarometricHeightGained)")
                 Text("Relative Altitude Gained: \(flight.relativeBarometricHeightGained)")
-//                if let minLatitude = flight.minLatitude {
-//                    Text("Min Latitude: \(minLatitude)")
-//                }
-//                if let maxLatitude = flight.maxLatitude {
-//                    Text("Max Latitude: \(maxLatitude)")
-//                }
-//                if let minLongitude = flight.minLongitude {
-//                    Text("Min Longitude: \(minLongitude)")
-//                }
-//                if let maxLongitude = flight.maxLongitude {
-//                    Text("Max Longitude: \(maxLongitude)")
-//                }
             }
         }
         .padding(.vertical, 50.0)

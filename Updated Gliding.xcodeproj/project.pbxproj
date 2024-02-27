@@ -20,7 +20,6 @@
 		494515DA2B83FC2900C77B49 /* RouteOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515D92B83FC2900C77B49 /* RouteOverview.swift */; };
 		494515DF2B8400A100C77B49 /* ThermalAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515DE2B8400A100C77B49 /* ThermalAnnotation.swift */; };
 		494515E12B8401A700C77B49 /* ThermalModalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515E02B8401A700C77B49 /* ThermalModalController.swift */; };
-		494515E42B84439D00C77B49 /* GlidingMapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515E32B84439D00C77B49 /* GlidingMapViewRepresentable.swift */; };
 		494515E62B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515E52B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift */; };
 		494515E92B8443D500C77B49 /* GlidingMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515E82B8443D500C77B49 /* GlidingMapViewController.swift */; };
 		494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */; };
@@ -34,6 +33,9 @@
 		4973931B2B859538005B433D /* GlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931A2B859538005B433D /* GlidingMapView.swift */; };
 		4973931D2B859F23005B433D /* GlidingMapViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */; };
 		4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */; };
+		497BE7002B8E4EF600FB7A41 /* SocketIO in Frameworks */ = {isa = PBXBuildFile; productRef = 497BE6FF2B8E4EF600FB7A41 /* SocketIO */; };
+		497BE7032B8E4F0900FB7A41 /* SocketConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BE7022B8E4F0900FB7A41 /* SocketConnection.swift */; };
+		497BE7052B8E502D00FB7A41 /* SocketConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497BE7042B8E502D00FB7A41 /* SocketConfig.swift */; };
 		498F6BE62B8520A4009A06AB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F6BE52B8520A4009A06AB /* LoginView.swift */; };
 		498F6BE82B8520AC009A06AB /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498F6BE72B8520AC009A06AB /* CreateAccountView.swift */; };
 		498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BB2B82E2E200919B86 /* APIBase.swift */; };
@@ -60,7 +62,6 @@
 		49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A52B826DFA00350008 /* APIFlight.swift */; };
 		49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A72B826E4F00350008 /* APIThermal.swift */; };
 		49DA87AA2B826E5D00350008 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A92B826E5D00350008 /* APIError.swift */; };
-		49FA7F8D2B8D8A68008927D4 /* Mongo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FA7F8C2B8D8A68008927D4 /* Mongo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,7 +95,6 @@
 		494515D92B83FC2900C77B49 /* RouteOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteOverview.swift; sourceTree = "<group>"; };
 		494515DE2B8400A100C77B49 /* ThermalAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalAnnotation.swift; sourceTree = "<group>"; };
 		494515E02B8401A700C77B49 /* ThermalModalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalModalController.swift; sourceTree = "<group>"; };
-		494515E32B84439D00C77B49 /* GlidingMapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewRepresentable.swift; sourceTree = "<group>"; };
 		494515E52B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		494515E82B8443D500C77B49 /* GlidingMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewController.swift; sourceTree = "<group>"; };
 		494515EA2B8446E000C77B49 /* LocationAuthorizationRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAuthorizationRequestView.swift; sourceTree = "<group>"; };
@@ -109,6 +109,8 @@
 		4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlidingMapViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewControllerError.swift; sourceTree = "<group>"; };
 		497393202B85B290005B433D /* Updated-Gliding-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Updated-Gliding-Info.plist"; sourceTree = SOURCE_ROOT; };
+		497BE7022B8E4F0900FB7A41 /* SocketConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketConnection.swift; sourceTree = "<group>"; };
+		497BE7042B8E502D00FB7A41 /* SocketConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketConfig.swift; sourceTree = "<group>"; };
 		498F6BE52B8520A4009A06AB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		498F6BE72B8520AC009A06AB /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		498FC5BB2B82E2E200919B86 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
@@ -139,7 +141,6 @@
 		49DA87A52B826DFA00350008 /* APIFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFlight.swift; sourceTree = "<group>"; };
 		49DA87A72B826E4F00350008 /* APIThermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIThermal.swift; sourceTree = "<group>"; };
 		49DA87A92B826E5D00350008 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		49FA7F8C2B8D8A68008927D4 /* Mongo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mongo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497BE7002B8E4EF600FB7A41 /* SocketIO in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +209,6 @@
 		494515E22B84438D00C77B49 /* GlidingMapBridge */ = {
 			isa = PBXGroup;
 			children = (
-				494515E32B84439D00C77B49 /* GlidingMapViewRepresentable.swift */,
 				494515E52B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift */,
 			);
 			path = GlidingMapBridge;
@@ -244,6 +245,14 @@
 			path = GlidingMap;
 			sourceTree = "<group>";
 		};
+		497BE7012B8E4EFE00FB7A41 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				497BE7022B8E4F0900FB7A41 /* SocketConnection.swift */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
 		498F6BE42B852094009A06AB /* UserAuthentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,8 +275,9 @@
 			children = (
 				498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */,
 				498FC5C02B82E34900919B86 /* APIConfig.swift */,
-				494515CC2B83C80600C77B49 /* ServicesConfig.swift */,
 				49307E7C2B8974F7003B8E98 /* GlidingMapViewConfig.swift */,
+				494515CC2B83C80600C77B49 /* ServicesConfig.swift */,
+				497BE7042B8E502D00FB7A41 /* SocketConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -360,7 +370,7 @@
 		49DA87872B825DD600350008 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				49FA7F8B2B8D8A5E008927D4 /* DB */,
+				497BE7012B8E4EFE00FB7A41 /* Socket */,
 				494515C72B83C78800C77B49 /* Services */,
 				49DA87A02B826DDA00350008 /* API */,
 				49DA87962B825F5D00350008 /* DataStore */,
@@ -416,14 +426,6 @@
 			path = API;
 			sourceTree = "<group>";
 		};
-		49FA7F8B2B8D8A5E008927D4 /* DB */ = {
-			isa = PBXGroup;
-			children = (
-				49FA7F8C2B8D8A68008927D4 /* Mongo.swift */,
-			);
-			path = DB;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -440,6 +442,9 @@
 			dependencies = (
 			);
 			name = "Updated Gliding";
+			packageProductDependencies = (
+				497BE6FF2B8E4EF600FB7A41 /* SocketIO */,
+			);
 			productName = "Updated Gliding";
 			productReference = 49DA87572B825DB600350008 /* Updated Gliding.app */;
 			productType = "com.apple.product-type.application";
@@ -514,6 +519,7 @@
 			mainGroup = 49DA874E2B825DB600350008;
 			packageReferences = (
 				49FA7F8E2B8D8B82008927D4 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				497BE6FE2B8E4EF600FB7A41 /* XCRemoteSwiftPackageReference "socket" */,
 			);
 			productRefGroup = 49DA87582B825DB600350008 /* Products */;
 			projectDirPath = "";
@@ -557,13 +563,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49FA7F8D2B8D8A68008927D4 /* Mongo.swift in Sources */,
 				494515DA2B83FC2900C77B49 /* RouteOverview.swift in Sources */,
 				4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */,
 				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
 				494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */,
 				49DA878A2B825DF200350008 /* Glider.swift in Sources */,
 				49DA878E2B825E2D00350008 /* Thermal.swift in Sources */,
+				497BE7032B8E4F0900FB7A41 /* SocketConnection.swift in Sources */,
 				494515DF2B8400A100C77B49 /* ThermalAnnotation.swift in Sources */,
 				4973931B2B859538005B433D /* GlidingMapView.swift in Sources */,
 				498F6BE82B8520AC009A06AB /* CreateAccountView.swift in Sources */,
@@ -597,11 +603,11 @@
 				49DA87AA2B826E5D00350008 /* APIError.swift in Sources */,
 				49DA87952B825F2A00350008 /* RelativeBarometricAltitude.swift in Sources */,
 				494515C92B83C79200C77B49 /* LocationModel.swift in Sources */,
+				497BE7052B8E502D00FB7A41 /* SocketConfig.swift in Sources */,
 				494515D82B83F40100C77B49 /* BarometricModelError.swift in Sources */,
 				494515CD2B83C80600C77B49 /* ServicesConfig.swift in Sources */,
 				495557522B86D31E007D8049 /* TopPostFlightMetricsView.swift in Sources */,
 				49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */,
-				494515E42B84439D00C77B49 /* GlidingMapViewRepresentable.swift in Sources */,
 				494515E12B8401A700C77B49 /* ThermalModalController.swift in Sources */,
 				4955574C2B86512C007D8049 /* BottomGlidingMapView.swift in Sources */,
 				494515E62B8443A900C77B49 /* GlidingMapViewControllerRepresentable.swift in Sources */,
@@ -972,6 +978,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		497BE6FE2B8E4EF600FB7A41 /* XCRemoteSwiftPackageReference "socket" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/socketio/socket.io-client-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		49FA7F8E2B8D8B82008927D4 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -981,6 +995,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		497BE6FF2B8E4EF600FB7A41 /* SocketIO */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 497BE6FE2B8E4EF600FB7A41 /* XCRemoteSwiftPackageReference "socket" */;
+			productName = SocketIO;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 49DA874F2B825DB600350008 /* Project object */;
 }
