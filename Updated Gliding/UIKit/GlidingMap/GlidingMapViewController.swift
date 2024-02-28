@@ -70,7 +70,7 @@ class GlidingMapViewController: UIViewController {
         initMap()
         guard let currentLocation = locationModel.currentLocation else { return }
         APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude, callback: addThermalCallback)
-        self.socketConnection = SocketConnection()
+        self.socketConnection = SocketConnection(thermalChangeHandler: addThermalAnnotations)
     }
     
     func initMap() {

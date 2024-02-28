@@ -13,7 +13,7 @@ class SocketConnection {
     let socket: SocketIOClient
     let socketManager: SocketManager
     
-    init() {
+    init(thermalChangeHandler: ([Thermal]) -> Void) {
         self.socketManager = SocketManager(
             socketURL: URL(string: SocketConfig.url)!,
             config: [.log(true), .compress]
@@ -24,7 +24,12 @@ class SocketConnection {
         self.socket.on(clientEvent: .connect) { data, ack in
             print("Socket Connected")
         }
+        self.socket.on("change") { data, ack in
+            print("DATA")
+            print(data[0])
+            print((data[0]) as? Thermal)
+            print("JKLJKL")
+        }
         self.socket.connect()
     }
-    
 }
