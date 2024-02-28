@@ -13,7 +13,7 @@ class SocketConnection {
     let socket: SocketIOClient
     let socketManager: SocketManager
     
-    init(thermalChangeHandler: ([Thermal]) -> Void) {
+    init(thermalChangeHandler: @escaping ( [Thermal]) -> Void) {
         self.socketManager = SocketManager(
             socketURL: URL(string: SocketConfig.url)!,
             config: [.log(true), .compress]
@@ -25,11 +25,17 @@ class SocketConnection {
             print("Socket Connected")
         }
         self.socket.on("change") { data, ack in
-            print("DATA")
-            print(data[0])
-            print((data[0]) as? Thermal)
-            print("JKLJKL")
+            do {
+                let thermalJSONData = String(describing: data[0]).data(using: .utf8)!
+                let thermal = try JSONDecoder().decode(Thermal.self, from: thermalJSONData)
+                print("THERMAL")
+                thermalChangeHandler([thermal])
+                
+            } catch {
+                print(error)
+            }
         }
         self.socket.connect()
     }
+    
 }
