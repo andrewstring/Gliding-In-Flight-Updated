@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ThermalModalController: UIViewController {
-    let tableView: UITableView
+class ThermalModalController: UITableViewController {
     let thermal: Thermal
     let thermalModalDataSource: ThermalModalDataSource
     
@@ -18,9 +17,10 @@ class ThermalModalController: UIViewController {
     
     init(_ thermal: Thermal) {
         self.thermal = thermal
-        self.tableView = UITableView()
         self.thermalModalDataSource = ThermalModalDataSource(thermal: thermal)
         super.init(nibName: nil, bundle: nil)
+        self.tableView = UITableView()
+        self.tableView.dataSource = self.thermalModalDataSource
         setupTableView(thermal)
         self.setupModalView()
     }
@@ -30,7 +30,7 @@ class ThermalModalController: UIViewController {
     }
     
     func setupModalView() {
-        self.modalPresentationStyle = .popover
+        self.modalPresentationStyle = .pageSheet
         self.modalTransitionStyle = .crossDissolve
     }
     
@@ -46,8 +46,7 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section != 0 { return 0 }
-        if section == 0 && self.thermal.location.altitude != nil { return 7 }
-        return 6
+        return 7
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,7 +56,7 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
             cell.textLabel!.text = "Occurance Info"
             cell.textLabel!.font = UIFont.boldSystemFont(ofSize: 30.0)
         case (0, 1):
-            cell.textLabel!.text = String(format: "Glider Name: %@", /*thermal.glider.name*/ "JKLJKL")
+            cell.textLabel!.text = String(format: "Glider Name: %@", thermal.glider != nil ? thermal.glider!.name : "No Name")
         case (0,2):
             cell.textLabel!.text = String(format: "Recorded On: %@", thermal.detectedOn)
         case (0,3):

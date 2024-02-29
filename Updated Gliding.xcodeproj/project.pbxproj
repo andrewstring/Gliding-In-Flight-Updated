@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4928F3A42B9028A600B18285 /* ThermalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928F3A32B9028A600B18285 /* ThermalStore.swift */; };
+		4928F3A62B9028AD00B18285 /* ThermalStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928F3A52B9028AD00B18285 /* ThermalStoreError.swift */; };
 		49307E7D2B8974F7003B8E98 /* GlidingMapViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49307E7C2B8974F7003B8E98 /* GlidingMapViewConfig.swift */; };
 		494515C62B83C62700C77B49 /* RouteCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515C52B83C62700C77B49 /* RouteCreator.swift */; };
 		494515C92B83C79200C77B49 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515C82B83C79200C77B49 /* LocationModel.swift */; };
@@ -82,6 +84,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4928F3A32B9028A600B18285 /* ThermalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalStore.swift; sourceTree = "<group>"; };
+		4928F3A52B9028AD00B18285 /* ThermalStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalStoreError.swift; sourceTree = "<group>"; };
 		49307E7C2B8974F7003B8E98 /* GlidingMapViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewConfig.swift; sourceTree = "<group>"; };
 		494515C52B83C62700C77B49 /* RouteCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCreator.swift; sourceTree = "<group>"; };
 		494515C82B83C79200C77B49 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
@@ -409,6 +413,8 @@
 				49DA879C2B8263EB00350008 /* GliderStoreError.swift */,
 				49DA87992B825F7B00350008 /* FlightStore.swift */,
 				49DA879E2B8263F300350008 /* FlightStoreError.swift */,
+				4928F3A32B9028A600B18285 /* ThermalStore.swift */,
+				4928F3A52B9028AD00B18285 /* ThermalStoreError.swift */,
 			);
 			path = DataStore;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 				4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */,
 				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
 				494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */,
+				4928F3A62B9028AD00B18285 /* ThermalStoreError.swift in Sources */,
 				49DA878A2B825DF200350008 /* Glider.swift in Sources */,
 				49DA878E2B825E2D00350008 /* Thermal.swift in Sources */,
 				497BE7032B8E4F0900FB7A41 /* SocketConnection.swift in Sources */,
@@ -592,6 +599,7 @@
 				494515D62B83DFC600C77B49 /* LocationError.swift in Sources */,
 				498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */,
 				494515E92B8443D500C77B49 /* GlidingMapViewController.swift in Sources */,
+				4928F3A42B9028A600B18285 /* ThermalStore.swift in Sources */,
 				495557502B8655C6007D8049 /* BottomGlidingMapButtonView.swift in Sources */,
 				49DA87932B825F2200350008 /* AbsoluteBarometricAltitude.swift in Sources */,
 				4955574A2B8642FC007D8049 /* BarometricAltitudeError.swift in Sources */,

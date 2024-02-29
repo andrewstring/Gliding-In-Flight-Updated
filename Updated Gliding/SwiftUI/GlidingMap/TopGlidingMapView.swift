@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopGlidingMapView: View {
+    @EnvironmentObject var thermalStore: ThermalStore
     @State var isExpanded = false
     
     private func expandTopGlidingMapView() {
@@ -18,11 +19,18 @@ struct TopGlidingMapView: View {
         VStack {
             if isExpanded {
                 VStack {
-                    Button("Test 1", action: {print("Test 1")})
-                    Button("Test 2", action: {print("Test 2")})
-                    Button("Test 3", action: {print("Test 3")})
-                    Button("Test 4", action: {print("Test 4")})
-                    Button("Test 5", action: {print("Test 5")})
+                    if thermalStore.thermals.count > 0 {
+                        ForEach(Array(thermalStore.thermals.prefix(5))) { thermal in
+                            Button(thermal.glider != nil ? thermal.glider!.name : "No Name", action: {print("JKLJKLL")})
+                                .padding()
+                                .background(Color.gray)
+                                .foregroundColor(Color.black)
+                                .font(.subheadline)
+                                .clipShape(Capsule())
+                        }
+                    } else {
+                        Text("NO THERMALS DETECTED IN AREA")
+                    }
                 }
                 .padding(.bottom, 20.0)
                 .font(.title2)

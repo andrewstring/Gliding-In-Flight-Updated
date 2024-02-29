@@ -7,7 +7,7 @@
 
 import CoreLocation
 
-struct Thermal: Codable {
+struct Thermal: Codable, Identifiable {
     let id: String
     let location: Location
     let glider: Glider?

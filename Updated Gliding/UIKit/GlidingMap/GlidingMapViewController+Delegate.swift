@@ -27,7 +27,7 @@ extension GlidingMapViewController: MKMapViewDelegate {
     
     func fetchThermalFromAnnotation(annotation: MKAnnotation) -> Thermal? {
         guard let thermalAnnotation = annotation as? ThermalAnnotation else { return nil }
-        let thermalFilter = self.thermals.filter({ $0.id == thermalAnnotation.id })
+        let thermalFilter = self.thermalStore.thermals.filter({ $0.id == thermalAnnotation.id })
         if thermalFilter.count > 0 {
             return thermalFilter[0]
         }

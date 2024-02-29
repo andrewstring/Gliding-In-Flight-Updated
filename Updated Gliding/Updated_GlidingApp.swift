@@ -15,6 +15,7 @@ struct Updated_GlidingApp: App {
     @StateObject var barometricModel = BarometricModel()
     @StateObject var gliderStore = GliderStore()
     @StateObject var flightStore = FlightStore()
+    @StateObject var thermalStore = ThermalStore()
     @State var didAttach = false
     
     func attach() {
@@ -34,6 +35,7 @@ struct Updated_GlidingApp: App {
                     .environmentObject(barometricModel)
                     .environmentObject(gliderStore)
                     .environmentObject(flightStore)
+                    .environmentObject(thermalStore)
                     .onAppear(perform: attach)
                 } else {
                     LoginView()

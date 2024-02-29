@@ -14,13 +14,13 @@ class GlidingMapViewController: UIViewController {
     let barometricModel: BarometricModel
     let flightStore: FlightStore
     let gliderStore: GliderStore
+    var thermalStore: ThermalStore
     
     var socketConnection: SocketConnection? = nil
     
     
     private let imageryMapConfig = MKImageryMapConfiguration()
     let mapView = MKMapView()
-    var thermals: [Thermal] = []
     
     var mapState: MapState = .preFlight {
         didSet {
@@ -53,12 +53,13 @@ class GlidingMapViewController: UIViewController {
         }
     }
     
-    init(navigationModel: NavigationModel, locationModel: LocationModel, barometricModel: BarometricModel, flightStore: FlightStore, gliderStore: GliderStore) {
+    init(navigationModel: NavigationModel, locationModel: LocationModel, barometricModel: BarometricModel, flightStore: FlightStore, gliderStore: GliderStore, thermalStore: ThermalStore) {
         self.navigationModel = navigationModel
         self.locationModel = locationModel
         self.barometricModel = barometricModel
         self.flightStore = flightStore
         self.gliderStore = gliderStore
+        self.thermalStore = thermalStore
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -139,14 +140,14 @@ extension GlidingMapViewController {
 // Thermal Annotation Adding/Removing
 extension GlidingMapViewController {
     func addThermalAnnotations(thermals: [Thermal]) {
-        self.thermals.append(contentsOf: thermals)
+        self.thermalStore.thermals.append(contentsOf: thermals)
         DispatchQueue.main.async {
             self.mapView.addAnnotations(thermals.map({ ThermalAnnotation(thermal: $0) }))
         }
     }
     
     func removeThermalAnnotation(thermals: [Thermal]) {
-        self.thermals = self.thermals.filter {
+        self.thermalStore.thermals = self.thermalStore.thermals.filter {
             element in thermals.contains {
                 thermal in
                 return thermal.id == element.id
