@@ -11,6 +11,7 @@ class LocationModel: NSObject, ObservableObject {
     @Published var currentLocation: Location?
     @Published var locationAuthorizationStatus: CLAuthorizationStatus
     var flightStore: FlightStore?
+    var thermalStore: ThermalStore?
     
     var locationManager: CLLocationManager
     

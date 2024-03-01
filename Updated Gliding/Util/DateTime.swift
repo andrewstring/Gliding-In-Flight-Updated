@@ -30,8 +30,49 @@ struct DateTime {
         self.second = calendar.component(.second, from: date)
     }
     
-    func toString() -> String {
+    func toStringFull() -> String {
         return "\(self.timeZone) \(self.month)\(self.day)\(self.year)\(self.hour)"
         + "\(self.minute)\(self.second)"
+    }
+    
+    func toString() -> String {
+        let monthStr = self.month < 10 ? "0\(self.month)" : "\(self.month)"
+        let dayStr = self.day < 10 ? "0\(self.day)" : "\(self.day)"
+        let yearStr = "\(self.year)"
+        let hourStr = self.hour < 10 ? "0\(self.hour)" : "\(self.hour)"
+        let minuteStr = self.minute < 10 ? "0\(self.minute)" : "\(self.minute)"
+        let secondStr = self.second < 10 ? "0\(self.second)" : "\(self.second)"
+        return "\(monthStr)/\(dayStr)/\(yearStr)-\(hourStr):\(minuteStr):\(secondStr)"
+    }
+    
+    static func secondsDifference(_ first: String, _ second: String) -> Int {
+        let monthOne: Int = Int(String(first.prefix(2)))!
+        let monthTwo: Int = Int(String(second.prefix(2)))!
+        let dayOne: Int = Int(String(first.dropFirst(3).prefix(2)))!
+        let dayTwo: Int = Int(String(second.dropFirst(3).prefix(2)))!
+        let yearOne: Int = Int(String(first.dropFirst(6).prefix(2)))!
+        let yearTwo: Int = Int(String(second.dropFirst(6).prefix(2)))!
+        let hourOne: Int = Int(String(first.dropFirst(9).prefix(2)))!
+        let hourTwo: Int = Int(String(second.dropFirst(9).prefix(2)))!
+        let minuteOne: Int = Int(String(first.dropFirst(12).prefix(2)))!
+        let minuteTwo: Int = Int(String(second.dropFirst(12).prefix(2)))!
+        let secondOne: Int = Int(String(first.dropFirst(15).prefix(2)))!
+        let secondTwo: Int = Int(String(second.dropFirst(15).prefix(2)))!
+        
+        let dayCountFromMonth: [Int] = [0,31,59,90,120,151,181,212,243,273,304,334]
+        
+        let minCov: Int = 60
+        let hourCov: Int = minCov * 60
+        let dayCov: Int = hourCov * 24
+        
+        let totSecondsOne: Int = secondOne + (minCov*minuteOne) + (hourCov*hourOne) + (dayCov*dayOne) + (dayCountFromMonth[monthOne-1]*dayCov)
+        let totSecondsTwo: Int = secondTwo + (minCov*minuteTwo) + (hourCov*hourTwo) + (dayCov*dayTwo) + (dayCountFromMonth[monthTwo-1]*dayCov)
+        
+        if yearOne == yearTwo {
+            return totSecondsOne - totSecondsTwo
+        } else {
+            let secondsInYear = 31536000
+            return (secondsInYear-totSecondsTwo) + totSecondsOne
+        }
     }
 }

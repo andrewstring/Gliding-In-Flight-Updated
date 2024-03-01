@@ -12,6 +12,7 @@ class NavigationModel: ObservableObject {
     var barometricModel: BarometricModel?
     var gliderStore: GliderStore?
     var flightStore: FlightStore?
+    var thermalStore: ThermalStore?
     
     @Published var mapState: MapState = .preFlight {
         didSet {
@@ -49,6 +50,7 @@ class NavigationModel: ObservableObject {
         
         self.locationModel!.flightStore = flightStore
         self.barometricModel!.flightStore = flightStore
+        self.locationModel!.thermalStore = thermalStore
      }
     
     func startNavigation() {

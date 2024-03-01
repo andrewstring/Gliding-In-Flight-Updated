@@ -72,6 +72,9 @@ class GlidingMapViewController: UIViewController {
         guard let currentLocation = locationModel.currentLocation else { return }
         APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude, callback: addThermalCallback)
         self.socketConnection = SocketConnection(thermalChangeHandler: addThermalAnnotations)
+        
+        print("DATETIME")
+        print(DateTime().toString())
     }
     
     func initMap() {
