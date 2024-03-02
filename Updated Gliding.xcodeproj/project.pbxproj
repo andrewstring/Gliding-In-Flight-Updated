@@ -43,6 +43,7 @@
 		498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BB2B82E2E200919B86 /* APIBase.swift */; };
 		498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */; };
 		498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5C02B82E34900919B86 /* APIConfig.swift */; };
+		4994DEB42B92A44E0091008E /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4994DEB32B92A44E0091008E /* LocationConfig.swift */; };
 		49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */; };
 		49DA875F2B825DB800350008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA875E2B825DB800350008 /* Assets.xcassets */; };
 		49DA87632B825DB800350008 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA87622B825DB800350008 /* Preview Assets.xcassets */; };
@@ -120,6 +121,7 @@
 		498FC5BB2B82E2E200919B86 /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
 		498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSBConfig.swift; sourceTree = "<group>"; };
 		498FC5C02B82E34900919B86 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		4994DEB32B92A44E0091008E /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
 		49DA87572B825DB600350008 /* Updated Gliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Updated Gliding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingApp.swift; sourceTree = "<group>"; };
 		49DA875E2B825DB800350008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				49307E7C2B8974F7003B8E98 /* GlidingMapViewConfig.swift */,
 				494515CC2B83C80600C77B49 /* ServicesConfig.swift */,
 				497BE7042B8E502D00FB7A41 /* SocketConfig.swift */,
+				4994DEB32B92A44E0091008E /* LocationConfig.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				497BE7032B8E4F0900FB7A41 /* SocketConnection.swift in Sources */,
 				494515DF2B8400A100C77B49 /* ThermalAnnotation.swift in Sources */,
 				4973931B2B859538005B433D /* GlidingMapView.swift in Sources */,
+				4994DEB42B92A44E0091008E /* LocationConfig.swift in Sources */,
 				498F6BE82B8520AC009A06AB /* CreateAccountView.swift in Sources */,
 				498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */,
 				494515ED2B84475000C77B49 /* ErrorView.swift in Sources */,

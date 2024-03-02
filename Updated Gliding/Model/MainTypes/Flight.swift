@@ -13,6 +13,7 @@ class Flight: Codable, ObservableObject, Identifiable {
     @Published var locations: [Location]
     @Published var absoluteBarometricAltitudes: [AbsoluteBarometricAltitude]
     @Published var relativeBarometricAltitudes: [RelativeBarometricAltitude]
+    @Published var thermals: [Thermal]
     let glider: Glider
     let dateOfFlight: String
     
@@ -39,7 +40,7 @@ class Flight: Codable, ObservableObject, Identifiable {
 //    }
     
     init(id: String, name: String, glider: Glider, dateOfFlight: String,
-         locations: [Location], absoluteBarometricAltitudes: [AbsoluteBarometricAltitude], relativeBarometricAltitudes: [RelativeBarometricAltitude]) {
+         locations: [Location], absoluteBarometricAltitudes: [AbsoluteBarometricAltitude], relativeBarometricAltitudes: [RelativeBarometricAltitude], thermals: [Thermal]) {
         self.id = id
         self.name = name
         self.glider = glider
@@ -47,6 +48,7 @@ class Flight: Codable, ObservableObject, Identifiable {
         self.locations = locations
         self.absoluteBarometricAltitudes = absoluteBarometricAltitudes
         self.relativeBarometricAltitudes = relativeBarometricAltitudes
+        self.thermals = thermals
     }
     
     func addNewLocationToFlight(newLocation: Location) throws {
@@ -69,6 +71,15 @@ class Flight: Codable, ObservableObject, Identifiable {
         }
     }
     
+    func addNewThermalToFlight(newThermal: Thermal) throws {
+        self.thermals.append(newThermal)
+        do {
+            try APIThermal.addThermal(thermalData: newThermal)
+        } catch {
+            print(error)
+        }
+    }
+    
     func addNewAbsoluteBarometricAltitudeToFlight(newAbsoluteBarometricAltitude: AbsoluteBarometricAltitude) throws {
         
     }
@@ -85,6 +96,7 @@ class Flight: Codable, ObservableObject, Identifiable {
         case locations
         case absoluteBarometricAltitudes
         case relativeBarometricAltitudes
+        case thermals
     }
     
     required init(from decoder: Decoder) throws {
@@ -97,6 +109,7 @@ class Flight: Codable, ObservableObject, Identifiable {
             locations = try values.decode([Location].self, forKey: .locations)
             absoluteBarometricAltitudes = try values.decode([AbsoluteBarometricAltitude].self, forKey: .absoluteBarometricAltitudes)
             relativeBarometricAltitudes = try values.decode([RelativeBarometricAltitude].self, forKey: .relativeBarometricAltitudes)
+            thermals = try values.decode([Thermal].self, forKey: .thermals)
         } catch {
             throw error
         }
@@ -112,6 +125,7 @@ class Flight: Codable, ObservableObject, Identifiable {
             try container.encode(locations, forKey: .locations)
             try container.encode(absoluteBarometricAltitudes, forKey: .absoluteBarometricAltitudes)
             try container.encode(relativeBarometricAltitudes, forKey: .relativeBarometricAltitudes)
+            try container.encode(thermals, forKey: .thermals)
         } catch {
             throw error
         }

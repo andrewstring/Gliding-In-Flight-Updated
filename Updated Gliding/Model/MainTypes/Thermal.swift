@@ -20,6 +20,14 @@ struct Thermal: Codable, Identifiable {
             longitude: location.longitude
         )
     }
+    
+    init(_ location: Location, _ glider: Glider? = nil) {
+        self.id = UUID().uuidString
+        self.location = location
+        self.detectedOn = DateTime().toString()
+        guard let glider = glider else { self.glider = nil; return }
+        self.glider = glider
+    }
 }
 
 struct ThermalResponse: Decodable {

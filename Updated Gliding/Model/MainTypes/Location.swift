@@ -37,14 +37,11 @@ class Location: Codable {
     
     static func exceedsThresholdDistance(distance: Double) throws -> Bool {
         return distance > ServicesConfig.thresholdDistance
-        
     }
     
     func distance(newLocation: CLLocation) throws -> Double {
         return CLLocation(latitude: self.latitude, longitude: self.longitude).distance(from: newLocation)
     }
-    
-    
     
     func exceedsThresholdAltitudeDelta(newLocation: CLLocation) throws -> Bool {
         return abs(self.altitude - newLocation.altitude) > ServicesConfig.thresholdGPSAltitude
@@ -52,12 +49,30 @@ class Location: Codable {
     
     static func exceedsThresholdAltitudeDelta(altitudeDelta: Double) throws -> Bool {
         return altitudeDelta > ServicesConfig.thresholdGPSAltitude
-        
     }
     
     func altitudeDelta(newLocation: CLLocation) throws -> Double {
         return abs(newLocation.altitude - self.altitude)
     }
+    
+    func altitudeDelta(newLocation: Location) throws -> Double {
+        return abs(newLocation.altitude - self.altitude)
+    }
+    
+    func exceedsThresholdAltitudePerTimeDelta(newLocation: Location) throws -> Bool {
+        do {
+            let timeDelta = DateTime.secondsDifference(newLocation.date, self.date)
+            let altitudeDelta = try self.altitudeDelta(newLocation: newLocation)
+            
+            if altitudeDelta / Double(timeDelta) > LocationConfig.altitudePerTimeThreshold {
+                return true
+            }
+            return false
+        } catch {
+            throw error
+        }
+    }
+    
     
     // For Encodable and Decodable Conformance
     enum CodingKeys: String, CodingKey {

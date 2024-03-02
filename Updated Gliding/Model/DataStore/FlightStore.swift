@@ -97,7 +97,8 @@ extension FlightStore {
             dateOfFlight: DateTime().toString(),
             locations: [],
             absoluteBarometricAltitudes: [],
-            relativeBarometricAltitudes: []
+            relativeBarometricAltitudes: [],
+            thermals: []
         )
         self.flight = flight
     }

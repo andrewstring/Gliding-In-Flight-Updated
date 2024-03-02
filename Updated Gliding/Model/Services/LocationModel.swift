@@ -48,13 +48,19 @@ extension LocationModel: CLLocationManagerDelegate {
                 print("ADDING ON 0")
                 try flight.addNewLocationToFlight(newLocation: Location(location))
             } else {
+                let newLocation = Location(location)
                 let lastLocation = flight.locations[flight.locations.count-1]
-                print("LAST")
-                print(lastLocation)
                 let distance = try lastLocation.distance(newLocation: location)
                 if try Location.exceedsThresholdDistance(distance: distance) {
-                    try flight.addNewLocationToFlight(newLocation: Location(location))
+                    try flight.addNewLocationToFlight(newLocation: newLocation)
                     flight.distanceTraveled += distance
+                }
+                if try lastLocation.exceedsThresholdAltitudePerTimeDelta(newLocation: newLocation) {
+                    guard let glider = flightStore?.flight?.glider else {
+                        try APIThermal.addThermal(thermalData: Thermal(newLocation))
+                        return
+                    }
+                    try APIThermal.addThermal(thermalData: Thermal(newLocation, glider))
                 }
             }
         } catch {
