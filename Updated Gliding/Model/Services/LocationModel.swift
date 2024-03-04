@@ -56,6 +56,7 @@ extension LocationModel: CLLocationManagerDelegate {
                     flight.distanceTraveled += distance
                 }
                 if try lastLocation.exceedsThresholdAltitudePerTimeDelta(newLocation: newLocation) {
+                    print("ADDING THERMAL")
                     guard let glider = flightStore?.flight?.glider else {
                         try APIThermal.addThermal(thermalData: Thermal(newLocation))
                         return
@@ -66,21 +67,6 @@ extension LocationModel: CLLocationManagerDelegate {
         } catch {
             print(error.localizedDescription)
         }
-//        if self.currentLocation == nil {
-//            self.currentLocation = Location(location)
-//        } else {
-//              if try self.currentLocation!.exceedsThresholdDistance(newLocation: location) {
-//            if self.currentLocation != nil {
-//                self.currentLocation = Location(location)
-//                guard let flight = self.flightStore?.flight else { return }
-//                do {
-//                    print("ADDING NEW LOCATION")
-//                    try flight.addNewLocationToFlight(newLocation: self.currentLocation!)
-//                } catch {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
     }
     
     // Helper func

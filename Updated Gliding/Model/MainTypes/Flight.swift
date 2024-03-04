@@ -29,16 +29,6 @@ class Flight: Codable, ObservableObject, Identifiable {
     var minLongitude: Double?
     var maxLongitude: Double?
     
-//    var representation: String {
-//        do {
-//            let jsonEncoder = JSONEncoder()
-//            let jsonData = try jsonEncoder.encode(self)
-//            return String(data: jsonData, encoding: String.Encoding.utf8)!
-//        } catch {
-//            return "ERROR
-//        }
-//    }
-    
     init(id: String, name: String, glider: Glider, dateOfFlight: String,
          locations: [Location], absoluteBarometricAltitudes: [AbsoluteBarometricAltitude], relativeBarometricAltitudes: [RelativeBarometricAltitude], thermals: [Thermal]) {
         self.id = id

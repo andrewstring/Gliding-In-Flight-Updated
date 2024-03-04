@@ -52,12 +52,12 @@ struct DateTime {
         let dayTwo: Int = Int(String(second.dropFirst(3).prefix(2)))!
         let yearOne: Int = Int(String(first.dropFirst(6).prefix(2)))!
         let yearTwo: Int = Int(String(second.dropFirst(6).prefix(2)))!
-        let hourOne: Int = Int(String(first.dropFirst(9).prefix(2)))!
-        let hourTwo: Int = Int(String(second.dropFirst(9).prefix(2)))!
-        let minuteOne: Int = Int(String(first.dropFirst(12).prefix(2)))!
-        let minuteTwo: Int = Int(String(second.dropFirst(12).prefix(2)))!
-        let secondOne: Int = Int(String(first.dropFirst(15).prefix(2)))!
-        let secondTwo: Int = Int(String(second.dropFirst(15).prefix(2)))!
+        let hourOne: Int = Int(String(first.dropFirst(11).prefix(2)))!
+        let hourTwo: Int = Int(String(second.dropFirst(11).prefix(2)))!
+        let minuteOne: Int = Int(String(first.dropFirst(14).prefix(2)))!
+        let minuteTwo: Int = Int(String(second.dropFirst(14).prefix(2)))!
+        let secondOne: Int = Int(String(first.dropFirst(17).prefix(2)))!
+        let secondTwo: Int = Int(String(second.dropFirst(17).prefix(2)))!
         
         let dayCountFromMonth: [Int] = [0,31,59,90,120,151,181,212,243,273,304,334]
         

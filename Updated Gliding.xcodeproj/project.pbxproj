@@ -44,6 +44,8 @@
 		498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */; };
 		498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5C02B82E34900919B86 /* APIConfig.swift */; };
 		4994DEB42B92A44E0091008E /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4994DEB32B92A44E0091008E /* LocationConfig.swift */; };
+		49B22B772B957C15007D8007 /* Flight+RouteOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B22B762B957C15007D8007 /* Flight+RouteOverview.swift */; };
+		49B22B7A2B958403007D8007 /* MeterConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B22B792B958403007D8007 /* MeterConversion.swift */; };
 		49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */; };
 		49DA875F2B825DB800350008 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA875E2B825DB800350008 /* Assets.xcassets */; };
 		49DA87632B825DB800350008 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DA87622B825DB800350008 /* Preview Assets.xcassets */; };
@@ -122,6 +124,8 @@
 		498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSBConfig.swift; sourceTree = "<group>"; };
 		498FC5C02B82E34900919B86 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		4994DEB32B92A44E0091008E /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
+		49B22B762B957C15007D8007 /* Flight+RouteOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+RouteOverview.swift"; sourceTree = "<group>"; };
+		49B22B792B958403007D8007 /* MeterConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeterConversion.swift; sourceTree = "<group>"; };
 		49DA87572B825DB600350008 /* Updated Gliding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Updated Gliding.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49DA875A2B825DB600350008 /* Updated_GlidingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updated_GlidingApp.swift; sourceTree = "<group>"; };
 		49DA875E2B825DB800350008 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				494515D12B83CC9200C77B49 /* DateTime.swift */,
+				49B22B792B958403007D8007 /* MeterConversion.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -395,6 +400,7 @@
 				494515D52B83DFC600C77B49 /* LocationError.swift */,
 				49DA878D2B825E2D00350008 /* Thermal.swift */,
 				49DA878F2B825E3E00350008 /* Flight.swift */,
+				49B22B762B957C15007D8007 /* Flight+RouteOverview.swift */,
 			);
 			path = MainTypes;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				494515DF2B8400A100C77B49 /* ThermalAnnotation.swift in Sources */,
 				4973931B2B859538005B433D /* GlidingMapView.swift in Sources */,
 				4994DEB42B92A44E0091008E /* LocationConfig.swift in Sources */,
+				49B22B7A2B958403007D8007 /* MeterConversion.swift in Sources */,
 				498F6BE82B8520AC009A06AB /* CreateAccountView.swift in Sources */,
 				498FC5BC2B82E2E200919B86 /* APIBase.swift in Sources */,
 				494515ED2B84475000C77B49 /* ErrorView.swift in Sources */,
@@ -603,6 +610,7 @@
 				494515D62B83DFC600C77B49 /* LocationError.swift in Sources */,
 				498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */,
 				494515E92B8443D500C77B49 /* GlidingMapViewController.swift in Sources */,
+				49B22B772B957C15007D8007 /* Flight+RouteOverview.swift in Sources */,
 				4928F3A42B9028A600B18285 /* ThermalStore.swift in Sources */,
 				495557502B8655C6007D8049 /* BottomGlidingMapButtonView.swift in Sources */,
 				49DA87932B825F2200350008 /* AbsoluteBarometricAltitude.swift in Sources */,

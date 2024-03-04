@@ -128,15 +128,23 @@ extension GlidingMapViewController {
     
     func setPostFlight() throws {
         guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
-        let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.postFlightZoom, longitudinalMeters: GlidingMapViewConfig.postFlightZoom)
+        var region = flightStore.flight?.getRouteOverviewRegion()
+        print("IS REGION NIL")
+        print(region!)
+        if region == nil {
+            print("WAS NIL")
+            region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.postFlightZoom, longitudinalMeters: GlidingMapViewConfig.postFlightZoom)
+        }
+        print("REGION")
+        print(region!)
         self.mapView.showsCompass = false
-        self.mapView.setRegion(region, animated: true)
         
         guard let flight = self.flightStore.flight else { throw GlidingMapViewControllerError.HandlingPostFlightMapStateUpdateWithoutFlightError }
         self.mapView.addOverlay(RouteOverview.generateRouteOverview(locations: flight.locations), level: .aboveLabels)
-        if flight.locations.count > 0 {
-            self.mapView.setCenter(flight.locations[0].coordLocation, animated: true)
-        }
+//        if flight.locations.count > 0 {
+//            self.mapView.setCenter(flight.locations[0].coordLocation, animated: true)
+//        }
+        self.mapView.setRegion(region!, animated: true)
     }
 }
 

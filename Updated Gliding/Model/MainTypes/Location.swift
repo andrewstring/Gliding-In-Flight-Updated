@@ -62,7 +62,12 @@ class Location: Codable {
     func exceedsThresholdAltitudePerTimeDelta(newLocation: Location) throws -> Bool {
         do {
             let timeDelta = DateTime.secondsDifference(newLocation.date, self.date)
+            print("TImeDeleta")
+            print(timeDelta)
             let altitudeDelta = try self.altitudeDelta(newLocation: newLocation)
+            print("AltitudeDelta")
+            print(altitudeDelta)
+            print(newLocation.altitude)
             
             if altitudeDelta / Double(timeDelta) > LocationConfig.altitudePerTimeThreshold {
                 return true
