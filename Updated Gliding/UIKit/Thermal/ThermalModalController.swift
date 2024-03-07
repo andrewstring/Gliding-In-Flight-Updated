@@ -33,7 +33,6 @@ class ThermalModalController: UITableViewController {
         self.modalPresentationStyle = .pageSheet
         self.modalTransitionStyle = .crossDissolve
     }
-    
 }
 
 class ThermalModalDataSource: NSObject, UITableViewDataSource {
@@ -46,7 +45,7 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section != 0 { return 0 }
-        return 7
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,10 +67,14 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
             cell.textLabel!.text = String(format: "Longitude: %f", thermal.location.longitude)
         case (0,6):
             cell.textLabel!.text = String(format: "Altitude: %f", thermal.location.altitude)
+        case (0,7):
+            cell.textLabel!.text = "Travel to this thermal"
+            cell.accessoryType = .disclosureIndicator
+            cell.backgroundColor = .darkGray
+            
         default:
             cell.textLabel!.text = " "
         }
         return cell
     }
-    
 }

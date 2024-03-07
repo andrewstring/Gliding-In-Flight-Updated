@@ -16,6 +16,7 @@ struct TopPostFlightMetricsView: View {
                 Text("Glider Name: \(flight.glider.name)")
                 Text("Date of Flight: \(flight.dateOfFlight)")
                 Text("Distance Traveled: \(flight.distanceTraveled)")
+                Text("Number of Thermals Encountered: \(flight.thermalCount)")
                 Text("GPS Altitude Gained: \(flight.gpsHeightGained)")
                 Text("Absolute Altitude Gained: \(flight.absoluteBarometricHeightGained)")
                 Text("Relative Altitude Gained: \(flight.relativeBarometricHeightGained)")

@@ -32,6 +32,7 @@
 		4955574E2B865135007D8049 /* TopGlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955574D2B865135007D8049 /* TopGlidingMapView.swift */; };
 		495557502B8655C6007D8049 /* BottomGlidingMapButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955574F2B8655C6007D8049 /* BottomGlidingMapButtonView.swift */; };
 		495557522B86D31E007D8049 /* TopPostFlightMetricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495557512B86D31E007D8049 /* TopPostFlightMetricsView.swift */; };
+		4972917C2B9940D40075CEF3 /* ThermalModalController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4972917B2B9940D40075CEF3 /* ThermalModalController+Delegate.swift */; };
 		4973931B2B859538005B433D /* GlidingMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931A2B859538005B433D /* GlidingMapView.swift */; };
 		4973931D2B859F23005B433D /* GlidingMapViewController+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */; };
 		4973931F2B85A010005B433D /* GlidingMapViewControllerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */; };
@@ -112,6 +113,7 @@
 		4955574D2B865135007D8049 /* TopGlidingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopGlidingMapView.swift; sourceTree = "<group>"; };
 		4955574F2B8655C6007D8049 /* BottomGlidingMapButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomGlidingMapButtonView.swift; sourceTree = "<group>"; };
 		495557512B86D31E007D8049 /* TopPostFlightMetricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopPostFlightMetricsView.swift; sourceTree = "<group>"; };
+		4972917B2B9940D40075CEF3 /* ThermalModalController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ThermalModalController+Delegate.swift"; sourceTree = "<group>"; };
 		4973931A2B859538005B433D /* GlidingMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapView.swift; sourceTree = "<group>"; };
 		4973931C2B859F23005B433D /* GlidingMapViewController+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlidingMapViewController+Delegate.swift"; sourceTree = "<group>"; };
 		4973931E2B85A010005B433D /* GlidingMapViewControllerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewControllerError.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			children = (
 				494515DE2B8400A100C77B49 /* ThermalAnnotation.swift */,
 				494515E02B8401A700C77B49 /* ThermalModalController.swift */,
+				4972917B2B9940D40075CEF3 /* ThermalModalController+Delegate.swift */,
 			);
 			path = Thermal;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
 				49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */,
 				4955574E2B865135007D8049 /* TopGlidingMapView.swift in Sources */,
+				4972917C2B9940D40075CEF3 /* ThermalModalController+Delegate.swift in Sources */,
 				49DA87A22B826DE700350008 /* ADSB.swift in Sources */,
 				49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */,
 				498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */,

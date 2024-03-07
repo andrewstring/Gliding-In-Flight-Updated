@@ -20,6 +20,7 @@ class Flight: Codable, ObservableObject, Identifiable {
     // Route Overview info
     var totalTime: Double = 0.0
     var distanceTraveled: Double = 0.0
+    var thermalCount: Int = 0
     var gpsHeightGained: Double = 0.0
     var absoluteBarometricHeightGained: Double = 0.0
     var relativeBarometricHeightGained: Double = 0.0
@@ -65,6 +66,7 @@ class Flight: Codable, ObservableObject, Identifiable {
         self.thermals.append(newThermal)
         do {
             try APIThermal.addThermal(thermalData: newThermal)
+            thermalCount += 1
         } catch {
             print(error)
         }
