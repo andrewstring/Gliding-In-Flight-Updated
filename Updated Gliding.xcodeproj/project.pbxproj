@@ -10,6 +10,7 @@
 		4928F3A42B9028A600B18285 /* ThermalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928F3A32B9028A600B18285 /* ThermalStore.swift */; };
 		4928F3A62B9028AD00B18285 /* ThermalStoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4928F3A52B9028AD00B18285 /* ThermalStoreError.swift */; };
 		49307E7D2B8974F7003B8E98 /* GlidingMapViewConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49307E7C2B8974F7003B8E98 /* GlidingMapViewConfig.swift */; };
+		493441DE2B9991F30049959E /* ThermalAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493441DD2B9991F30049959E /* ThermalAnnotationView.swift */; };
 		494515C62B83C62700C77B49 /* RouteCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515C52B83C62700C77B49 /* RouteCreator.swift */; };
 		494515C92B83C79200C77B49 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515C82B83C79200C77B49 /* LocationModel.swift */; };
 		494515CB2B83C79900C77B49 /* BarometricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494515CA2B83C79900C77B49 /* BarometricModel.swift */; };
@@ -91,6 +92,7 @@
 		4928F3A32B9028A600B18285 /* ThermalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalStore.swift; sourceTree = "<group>"; };
 		4928F3A52B9028AD00B18285 /* ThermalStoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalStoreError.swift; sourceTree = "<group>"; };
 		49307E7C2B8974F7003B8E98 /* GlidingMapViewConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlidingMapViewConfig.swift; sourceTree = "<group>"; };
+		493441DD2B9991F30049959E /* ThermalAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalAnnotationView.swift; sourceTree = "<group>"; };
 		494515C52B83C62700C77B49 /* RouteCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCreator.swift; sourceTree = "<group>"; };
 		494515C82B83C79200C77B49 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		494515CA2B83C79900C77B49 /* BarometricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarometricModel.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		494515DB2B83FC2C00C77B49 /* Thermal */ = {
 			isa = PBXGroup;
 			children = (
+				493441DD2B9991F30049959E /* ThermalAnnotationView.swift */,
 				494515DE2B8400A100C77B49 /* ThermalAnnotation.swift */,
 				494515E02B8401A700C77B49 /* ThermalModalController.swift */,
 				4972917B2B9940D40075CEF3 /* ThermalModalController+Delegate.swift */,
@@ -630,6 +633,7 @@
 				497BE7052B8E502D00FB7A41 /* SocketConfig.swift in Sources */,
 				494515D82B83F40100C77B49 /* BarometricModelError.swift in Sources */,
 				494515CD2B83C80600C77B49 /* ServicesConfig.swift in Sources */,
+				493441DE2B9991F30049959E /* ThermalAnnotationView.swift in Sources */,
 				495557522B86D31E007D8049 /* TopPostFlightMetricsView.swift in Sources */,
 				49DA875B2B825DB600350008 /* Updated_GlidingApp.swift in Sources */,
 				494515E12B8401A700C77B49 /* ThermalModalController.swift in Sources */,

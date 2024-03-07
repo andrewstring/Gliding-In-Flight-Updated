@@ -17,11 +17,19 @@ extension ThermalModalController {
     func handleNavigateTo() {
         self.dismiss(animated: true, completion: completion)
     }
+    func handleCancel() {
+        self.dismiss(animated: true)
+    }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard indexPath.section == 0 else { return }
-        if indexPath.row == 7 {
+        switch indexPath.row {
+        case 7:
             handleNavigateTo()
+        case 9:
+            handleCancel()
+        default:
+            return
         }
     }
 }

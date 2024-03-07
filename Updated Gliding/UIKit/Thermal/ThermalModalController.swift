@@ -45,7 +45,7 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section != 0 { return 0 }
-        return 8
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,9 +68,19 @@ class ThermalModalDataSource: NSObject, UITableViewDataSource {
         case (0,6):
             cell.textLabel!.text = String(format: "Altitude: %f", thermal.location.altitude)
         case (0,7):
-            cell.textLabel!.text = "Travel to this thermal"
-            cell.accessoryType = .disclosureIndicator
             cell.backgroundColor = .darkGray
+            guard let textLabel = cell.textLabel else { return cell }
+            textLabel.text = "Travel to this thermal"
+            textLabel.textColor = .white
+            textLabel.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
+        case (0,8):
+            cell.textLabel!.text = ""
+        case (0,9):
+            cell.backgroundColor = .darkGray
+            guard let textLabel = cell.textLabel else { return cell }
+            textLabel.text = "Cancel"
+            textLabel.textColor = .white
+            textLabel.font = UIFont.systemFont(ofSize: 20.0, weight: .bold)
             
         default:
             cell.textLabel!.text = " "

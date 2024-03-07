@@ -33,5 +33,12 @@ extension GlidingMapViewController: MKMapViewDelegate {
         }
         return nil
     }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        return ThermalAnnotationView(annotation: annotation, reuseIdentifier: nil)
+    }
 }
 
