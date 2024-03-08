@@ -9,6 +9,7 @@ import Foundation
 
 class ThermalStore: ObservableObject {
     @Published var thermals: [Thermal]
+    var activeThermalAnnotationView: ThermalAnnotationView?
     
     init() {
         self.thermals = []

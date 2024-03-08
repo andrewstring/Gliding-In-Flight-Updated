@@ -5,24 +5,32 @@
 //  Created by Andrew Stringfellow on 2/19/24.
 //
 
-import UIKit
+import MapKit
 
 class ThermalModalController: UITableViewController {
     let thermal: Thermal
+    let thermalStore: ThermalStore
     let thermalModalDataSource: ThermalModalDataSource
+    var thermalAnnotationView: ThermalAnnotationView? = nil
+    var glidingMapViewController: GlidingMapViewController
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(_ thermal: Thermal) {
+    init(_ thermal: Thermal, _ thermalStore: ThermalStore, _ glidingMapViewController: GlidingMapViewController, _ view: MKAnnotationView) {
         self.thermal = thermal
+        self.thermalStore = thermalStore
+        self.glidingMapViewController = glidingMapViewController
         self.thermalModalDataSource = ThermalModalDataSource(thermal: thermal)
         super.init(nibName: nil, bundle: nil)
         self.tableView = UITableView()
         self.tableView.dataSource = self.thermalModalDataSource
         setupTableView(thermal)
         self.setupModalView()
+        
+        guard let thermalAnnotationView = view as? ThermalAnnotationView else { return }
+        self.thermalAnnotationView = thermalAnnotationView
     }
     
     func setupTableView(_ thermal: Thermal) {
