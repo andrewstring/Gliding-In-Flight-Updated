@@ -119,7 +119,6 @@ extension GlidingMapViewController {
     func setInOverviewFlight() throws {
         self.mapView.removeOverlays(self.mapView.overlays)
         
-        
         guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
         let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.inOverviewFlightZoom, longitudinalMeters: GlidingMapViewConfig.inOverviewFlightZoom)
         self.mapView.showsCompass = true
@@ -129,14 +128,9 @@ extension GlidingMapViewController {
     func setPostFlight() throws {
         guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
         var region = flightStore.flight?.getRouteOverviewRegion()
-        print("IS REGION NIL")
-        print(region!)
         if region == nil {
-            print("WAS NIL")
             region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.postFlightZoom, longitudinalMeters: GlidingMapViewConfig.postFlightZoom)
         }
-        print("REGION")
-        print(region!)
         self.mapView.showsCompass = false
         
         guard let flight = self.flightStore.flight else { throw GlidingMapViewControllerError.HandlingPostFlightMapStateUpdateWithoutFlightError }
@@ -145,6 +139,17 @@ extension GlidingMapViewController {
 //            self.mapView.setCenter(flight.locations[0].coordLocation, animated: true)
 //        }
         self.mapView.setRegion(region!, animated: true)
+    }
+    
+    func setNavigateTo(thermalAnnotationView: ThermalAnnotationView) {
+        if let activeThermalAnnotationView = self.thermalStore.activeThermalAnnotationView {
+            activeThermalAnnotationView.deactivateIcon()
+        }
+        thermalStore.activeThermalAnnotationView = thermalAnnotationView
+        thermalAnnotationView.activateIcon()
+        
+        guard let currentCoord = self.locationModel.currentLocation?.coordLocation else { return }
+        self.mapView.setCenter(currentCoord, animated: true)
     }
 }
 

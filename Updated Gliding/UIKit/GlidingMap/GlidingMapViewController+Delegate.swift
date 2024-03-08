@@ -56,11 +56,14 @@ extension GlidingMapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         guard let thermal = fetchThermalFromAnnotationView(annotationView: view) else { return }
-        self.present(ThermalModalController(thermal, thermalStore, self, view), animated: true)
+        self.present(ThermalModalController(
+            thermal: thermal,
+            thermalStore: thermalStore,
+            glidingMapViewController: self,
+            thermalAnnotationView: view,
+            navigateToHandler: setNavigateTo
+        ), animated: true)
         self.mapView.deselectAnnotation(view.annotation, animated: false)
-        
-        guard let view = view as? ThermalAnnotationView else { return }
-        
     }
 }
 

@@ -69,6 +69,7 @@
 		49DA87A62B826DFA00350008 /* APIFlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A52B826DFA00350008 /* APIFlight.swift */; };
 		49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A72B826E4F00350008 /* APIThermal.swift */; };
 		49DA87AA2B826E5D00350008 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A92B826E5D00350008 /* APIError.swift */; };
+		49EFBE242B9AE8910047FF2F /* ThermalNavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFBE232B9AE8910047FF2F /* ThermalNavigationRoute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,7 @@
 		49DA87A52B826DFA00350008 /* APIFlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFlight.swift; sourceTree = "<group>"; };
 		49DA87A72B826E4F00350008 /* APIThermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIThermal.swift; sourceTree = "<group>"; };
 		49DA87A92B826E5D00350008 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		49EFBE232B9AE8910047FF2F /* ThermalNavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalNavigationRoute.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				494515DE2B8400A100C77B49 /* ThermalAnnotation.swift */,
 				494515E02B8401A700C77B49 /* ThermalModalController.swift */,
 				4972917B2B9940D40075CEF3 /* ThermalModalController+Delegate.swift */,
+				49EFBE232B9AE8910047FF2F /* ThermalNavigationRoute.swift */,
 			);
 			path = Thermal;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				49DA87982B825F7400350008 /* GliderStore.swift in Sources */,
 				494515EB2B8446E000C77B49 /* LocationAuthorizationRequestView.swift in Sources */,
 				4928F3A62B9028AD00B18285 /* ThermalStoreError.swift in Sources */,
+				49EFBE242B9AE8910047FF2F /* ThermalNavigationRoute.swift in Sources */,
 				49DA878A2B825DF200350008 /* Glider.swift in Sources */,
 				49DA878E2B825E2D00350008 /* Thermal.swift in Sources */,
 				497BE7032B8E4F0900FB7A41 /* SocketConnection.swift in Sources */,

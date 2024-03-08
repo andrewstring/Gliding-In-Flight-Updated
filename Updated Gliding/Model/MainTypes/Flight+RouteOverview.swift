@@ -14,12 +14,6 @@ extension Flight {
         guard let minLongitude = self.minLongitude else { return nil }
         guard let maxLongitude = self.maxLongitude else { return nil }
         
-        print("Location RESULTS")
-        print(minLatitude)
-        print(maxLatitude)
-        print(minLongitude)
-        print(maxLongitude)
-        
         let midLatitude = (minLatitude + maxLatitude) / 2.0
         let midLongitude = (minLongitude + maxLongitude) / 2.0
         let center = CLLocationCoordinate2D(latitude: midLatitude, longitude: midLongitude)
@@ -36,4 +30,6 @@ extension Flight {
             longitudinalMeters: longitudinalMeters
         )
     }
+    
+    
 }
