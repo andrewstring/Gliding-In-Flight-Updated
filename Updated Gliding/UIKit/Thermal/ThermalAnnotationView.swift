@@ -8,6 +8,7 @@
 import MapKit
 
 class ThermalAnnotationView: MKAnnotationView {
+    var id: String? = nil
     enum IconColor: String {
         case green = "green"
         case red = "red"
@@ -21,8 +22,13 @@ class ThermalAnnotationView: MKAnnotationView {
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         self.iconColor = .green
+        if let thermalAnnotation = annotation as? ThermalAnnotation {
+            self.id = thermalAnnotation.id
+        }
+        
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         drawIcon()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

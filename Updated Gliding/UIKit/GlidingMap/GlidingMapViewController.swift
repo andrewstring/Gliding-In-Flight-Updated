@@ -73,8 +73,7 @@ class GlidingMapViewController: UIViewController {
         APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude, callback: addThermalCallback)
         self.socketConnection = SocketConnection(thermalChangeHandler: addThermalAnnotations)
         
-        print("DATETIME")
-        print(DateTime().toString())
+        self.locationModel.glidingMapViewController = self
     }
     
     func initMap() {
@@ -150,6 +149,19 @@ extension GlidingMapViewController {
         
         guard let currentCoord = self.locationModel.currentLocation?.coordLocation else { return }
         self.mapView.setCenter(currentCoord, animated: true)
+    }
+    
+    func reCenter(_ mapState: MapState) throws {
+        switch mapState {
+        case .inFlight:
+            self.mapView.setUserTrackingMode(.followWithHeading, animated: true)
+        case .inOverviewFlight:
+            guard let location = locationModel.currentLocation else { throw GlidingMapViewControllerError.HandlingMapStateUpdateWithoutLocationError }
+            let region = MKCoordinateRegion(center: location.coordLocation, latitudinalMeters: GlidingMapViewConfig.inOverviewFlightZoom, longitudinalMeters: GlidingMapViewConfig.inOverviewFlightZoom)
+            self.mapView.setRegion(region, animated: true)
+        default:
+            return
+        }
     }
 }
 

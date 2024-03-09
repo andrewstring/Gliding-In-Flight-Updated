@@ -14,12 +14,13 @@ class ThermalModalController: UITableViewController {
     var thermalAnnotationView: ThermalAnnotationView? = nil
     var glidingMapViewController: GlidingMapViewController
     var navigateToHandler: (ThermalAnnotationView)->Void
+//    var reCenterHandler: (MapState)->Void
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(thermal: Thermal, thermalStore: ThermalStore, glidingMapViewController: GlidingMapViewController, thermalAnnotationView: MKAnnotationView, navigateToHandler: @escaping (ThermalAnnotationView)->Void) {
+    init(thermal: Thermal, thermalStore: ThermalStore, glidingMapViewController: GlidingMapViewController, thermalAnnotationView: MKAnnotationView, navigateToHandler: @escaping (ThermalAnnotationView)->Void/*, reCenterHandler: (MapState)->Void*/) {
         self.thermal = thermal
         self.thermalStore = thermalStore
         self.glidingMapViewController = glidingMapViewController

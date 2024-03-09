@@ -51,7 +51,9 @@ extension GlidingMapViewController: MKMapViewDelegate {
         if annotation is MKUserLocation {
             return nil
         }
-        return ThermalAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        let thermalAnnotationView = ThermalAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        self.thermalStore.thermalAnnotationViews.append(thermalAnnotationView)
+        return thermalAnnotationView
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {

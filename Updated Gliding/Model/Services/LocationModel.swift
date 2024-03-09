@@ -12,6 +12,7 @@ class LocationModel: NSObject, ObservableObject {
     @Published var locationAuthorizationStatus: CLAuthorizationStatus
     var flightStore: FlightStore?
     var thermalStore: ThermalStore?
+    var glidingMapViewController: GlidingMapViewController?
     
     var locationManager: CLLocationManager
     
@@ -54,6 +55,9 @@ extension LocationModel: CLLocationManagerDelegate {
                 if try Location.exceedsThresholdDistance(distance: distance) {
                     try flight.addNewLocationToFlight(newLocation: newLocation)
                     flight.distanceTraveled += distance
+                    if self.glidingMapViewController != nil {
+                        self.glidingMapViewController!.mapView.addOverlay(RouteOverview.generateRouteOverview(locations: flight.locations), level: .aboveLabels)
+                    }
                 }
                 if try lastLocation.exceedsThresholdAltitudePerTimeDelta(newLocation: newLocation) {
                     print("ADDING THERMAL")
