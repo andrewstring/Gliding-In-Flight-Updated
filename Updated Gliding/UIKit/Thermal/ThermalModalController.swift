@@ -10,6 +10,7 @@ import MapKit
 class ThermalModalController: UITableViewController {
     let thermal: Thermal
     let thermalStore: ThermalStore
+    let gliderStore: GliderStore
     let thermalModalDataSource: ThermalModalDataSource
     var thermalAnnotationView: ThermalAnnotationView? = nil
     var glidingMapViewController: GlidingMapViewController
@@ -20,9 +21,10 @@ class ThermalModalController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(thermal: Thermal, thermalStore: ThermalStore, glidingMapViewController: GlidingMapViewController, thermalAnnotationView: MKAnnotationView, navigateToHandler: @escaping (ThermalAnnotationView)->Void/*, reCenterHandler: (MapState)->Void*/) {
+    init(thermal: Thermal, thermalStore: ThermalStore, gliderStore: GliderStore, glidingMapViewController: GlidingMapViewController, thermalAnnotationView: MKAnnotationView, navigateToHandler: @escaping (ThermalAnnotationView)->Void/*, reCenterHandler: (MapState)->Void*/) {
         self.thermal = thermal
         self.thermalStore = thermalStore
+        self.gliderStore = gliderStore
         self.glidingMapViewController = glidingMapViewController
         self.navigateToHandler = navigateToHandler
         self.thermalModalDataSource = ThermalModalDataSource(thermal: thermal)

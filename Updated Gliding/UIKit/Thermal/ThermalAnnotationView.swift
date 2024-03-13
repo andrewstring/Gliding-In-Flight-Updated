@@ -9,9 +9,11 @@ import MapKit
 
 class ThermalAnnotationView: MKAnnotationView {
     var id: String? = nil
+    
     enum IconColor: String {
         case green = "green"
         case red = "red"
+        case blue =  "blue"
     }
     
     var iconColor: IconColor {
@@ -23,6 +25,12 @@ class ThermalAnnotationView: MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         self.iconColor = .green
         if let thermalAnnotation = annotation as? ThermalAnnotation {
+            switch thermalAnnotation.userType {
+            case .ownUser:
+                self.iconColor = .green
+            case .otherUser:
+                self.iconColor = .blue
+            }
             self.id = thermalAnnotation.id
         }
         
@@ -38,12 +46,17 @@ class ThermalAnnotationView: MKAnnotationView {
     func drawIcon() {
         var icon = UIImage(systemName: "arrowshape.up.fill")
         
+        var color: UIColor
         switch self.iconColor {
         case .green:
-            icon = icon?.withTintColor(.systemGreen, renderingMode: .alwaysOriginal)
+            color = .systemGreen
         case .red:
-            icon = icon?.withTintColor(.systemRed, renderingMode: .alwaysOriginal)
+            color = .systemRed
+        case .blue:
+            color = .systemBlue
         }
+        icon = icon?.withTintColor(color, renderingMode: .alwaysOriginal)
+        
         let size = CGSize(width: 40, height: 40)
         
         // Bug with coloring not working with MKAnnotationView UIImage required
@@ -59,6 +72,13 @@ class ThermalAnnotationView: MKAnnotationView {
         self.iconColor = .red
     }
     func deactivateIcon() {
-        self.iconColor = .green
+        if let thermalAnnotation = self.annotation as? ThermalAnnotation {
+            switch thermalAnnotation.userType {
+            case .ownUser:
+                self.iconColor = .green
+            case .otherUser:
+                self.iconColor = .blue
+            }
+        }
     }
 }

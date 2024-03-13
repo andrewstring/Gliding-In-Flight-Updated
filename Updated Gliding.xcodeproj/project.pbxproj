@@ -46,6 +46,7 @@
 		498FC5BF2B82E33A00919B86 /* ADSBConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */; };
 		498FC5C12B82E34900919B86 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498FC5C02B82E34900919B86 /* APIConfig.swift */; };
 		4994DEB42B92A44E0091008E /* LocationConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4994DEB32B92A44E0091008E /* LocationConfig.swift */; };
+		499F0D2D2BA141FB00301864 /* DirectionalComputation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499F0D2C2BA141FB00301864 /* DirectionalComputation.swift */; };
 		49A7EFF82B9B6822009C9C53 /* GlidingMapViewController+SwiftUILink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7EFF72B9B6822009C9C53 /* GlidingMapViewController+SwiftUILink.swift */; };
 		49A7EFFE2B9B825E009C9C53 /* TopGlidingMapView+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7EFFD2B9B825E009C9C53 /* TopGlidingMapView+Navigation.swift */; };
 		49B22B772B957C15007D8007 /* Flight+RouteOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B22B762B957C15007D8007 /* Flight+RouteOverview.swift */; };
@@ -131,6 +132,7 @@
 		498FC5BE2B82E33A00919B86 /* ADSBConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADSBConfig.swift; sourceTree = "<group>"; };
 		498FC5C02B82E34900919B86 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		4994DEB32B92A44E0091008E /* LocationConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationConfig.swift; sourceTree = "<group>"; };
+		499F0D2C2BA141FB00301864 /* DirectionalComputation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionalComputation.swift; sourceTree = "<group>"; };
 		49A7EFF72B9B6822009C9C53 /* GlidingMapViewController+SwiftUILink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GlidingMapViewController+SwiftUILink.swift"; sourceTree = "<group>"; };
 		49A7EFFD2B9B825E009C9C53 /* TopGlidingMapView+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TopGlidingMapView+Navigation.swift"; sourceTree = "<group>"; };
 		49B22B762B957C15007D8007 /* Flight+RouteOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Flight+RouteOverview.swift"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			children = (
 				494515D12B83CC9200C77B49 /* DateTime.swift */,
 				49B22B792B958403007D8007 /* MeterConversion.swift */,
+				499F0D2C2BA141FB00301864 /* DirectionalComputation.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 				49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */,
 				494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */,
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
+				499F0D2D2BA141FB00301864 /* DirectionalComputation.swift in Sources */,
 				49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */,
 				4955574E2B865135007D8049 /* TopGlidingMapView.swift in Sources */,
 				4972917C2B9940D40075CEF3 /* ThermalModalController+Delegate.swift in Sources */,
@@ -740,6 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -795,6 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

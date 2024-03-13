@@ -28,7 +28,5 @@ struct MeterConversion {
         let adjustedLongitudinalDistance = longitudinalDistance * cosLatitude
         
         return Self.earthRadius * adjustedLongitudinalDistance
-        
     }
-    
 }

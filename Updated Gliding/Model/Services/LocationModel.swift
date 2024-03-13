@@ -59,13 +59,21 @@ extension LocationModel: CLLocationManagerDelegate {
                         self.glidingMapViewController!.mapView.addOverlay(RouteOverview.generateRouteOverview(locations: flight.locations), level: .aboveLabels)
                     }
                 }
+                
                 if try lastLocation.exceedsThresholdAltitudePerTimeDelta(newLocation: newLocation) {
-                    print("ADDING THERMAL")
-                    guard let glider = flightStore?.flight?.glider else {
-                        try APIThermal.addThermal(thermalData: Thermal(newLocation))
-                        return
+                    if var thermals = flightStore?.flight?.thermals {
+                        for thermal in thermals {
+                            if try thermal.exceedsThresholdDistance(newLocation: newLocation) {
+                                thermals.append(Thermal(newLocation))
+                                guard let glider = flightStore?.flight?.glider else {
+                                    try APIThermal.addThermal(thermalData: Thermal(newLocation))
+                                    return
+                                }
+                                try APIThermal.addThermal(thermalData: Thermal(newLocation, glider))
+                                break
+                            }
+                        }
                     }
-                    try APIThermal.addThermal(thermalData: Thermal(newLocation, glider))
                 }
             }
         } catch {

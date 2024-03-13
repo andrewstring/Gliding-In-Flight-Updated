@@ -37,5 +37,4 @@ class SocketConnection {
         }
         self.socket.connect()
     }
-    
 }

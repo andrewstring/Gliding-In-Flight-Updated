@@ -14,4 +14,6 @@ struct ServicesConfig {
     static let thresholdGPSAltitude = 0.01
     static let thresholdAbsoluteAltitudeDelta = 3.0
     static let thresholdRelativeAltitudeDelta = 3.0
+    
+    static let thresholdThermalDistance = 100.0
 }

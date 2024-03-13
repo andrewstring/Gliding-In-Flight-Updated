@@ -53,6 +53,7 @@ class NavigationModel: ObservableObject {
         self.locationModel!.thermalStore = thermalStore
      }
     
+    @MainActor
     func startNavigation() {
         self.mapState = .inFlight
         guard let glider = self.gliderStore?.glider else { print(NavigationModelError.StartingNavigationWithNoGliderError.localizedDescription); return }
@@ -60,6 +61,7 @@ class NavigationModel: ObservableObject {
         flightStore.createFlight(name: "TEST", glider: glider)
     }
     
+    @MainActor
     func startOverviewNavigation() {
         self.mapState = .inOverviewFlight
         guard let glider = self.gliderStore?.glider else { print(NavigationModelError.StartingNavigationWithNoGliderError.localizedDescription); return }

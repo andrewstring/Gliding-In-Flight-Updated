@@ -73,6 +73,8 @@ class GlidingMapViewController: UIViewController {
         APIThermal.getThermalByRadius(latitude: currentLocation.latitude, longitude: currentLocation.longitude, callback: addThermalCallback)
         self.socketConnection = SocketConnection(thermalChangeHandler: addThermalAnnotations)
         
+        
+        
         self.locationModel.glidingMapViewController = self
     }
     
@@ -85,6 +87,13 @@ class GlidingMapViewController: UIViewController {
         
         do {
             try setPreFlight()
+            // FOR TESTING//
+            let thermalTest = [
+                Thermal(Location(CLLocation(latitude: 39.2524, longitude: -84.33))),
+                Thermal(Location(CLLocation(latitude: 39.2555,longitude: -84.33)), Glider(id: "JKLJKL", name: "JKLJKL"))
+            ]
+            addThermalAnnotations(thermals: thermalTest)
+            // FOR TESTING//
         } catch {
             print(error)
         }
@@ -170,7 +179,19 @@ extension GlidingMapViewController {
     func addThermalAnnotations(thermals: [Thermal]) {
         self.thermalStore.thermals.append(contentsOf: thermals)
         DispatchQueue.main.async {
-            self.mapView.addAnnotations(thermals.map({ ThermalAnnotation(thermal: $0) }))
+            self.mapView.addAnnotations(thermals.map({
+                if let glider = $0.glider, let gliderStoreGlider = self.gliderStore.glider {
+                    print("JKLJKL")
+                    print(glider.id)
+                    print(gliderStoreGlider.id)
+                    print(gliderStoreGlider)
+                    return ThermalAnnotation(
+                        thermal: $0,
+                        userType: glider.id == gliderStoreGlider.id ? .ownUser : .otherUser
+                    )
+                }
+                return ThermalAnnotation(thermal: $0, userType: .ownUser)
+            }))
         }
     }
     

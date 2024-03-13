@@ -28,6 +28,10 @@ struct Thermal: Codable, Identifiable {
         guard let glider = glider else { self.glider = nil; return }
         self.glider = glider
     }
+    
+    func exceedsThresholdDistance(newLocation: Location) throws -> Bool {
+        return CLLocation(latitude: self.location.latitude, longitude: self.location.longitude).distance(from: CLLocation(latitude: newLocation.latitude, longitude: newLocation.longitude)) > ServicesConfig.thresholdThermalDistance
+    }
 }
 
 struct ThermalResponse: Decodable {

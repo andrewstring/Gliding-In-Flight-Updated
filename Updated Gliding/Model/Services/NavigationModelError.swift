@@ -13,5 +13,4 @@ enum NavigationModelError: Error {
     case StartingNavigtationWithNoFlightStoreError
     case StoppingNavigationWithNoFlightError
     case AttachingFlightStoreWithNoLocationModelError
-    
 }

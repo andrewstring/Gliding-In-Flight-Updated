@@ -9,9 +9,16 @@ import MapKit
 
 class ThermalAnnotation: MKPointAnnotation {
     let id: String
+    let userType: UserType
     
-    init(thermal: Thermal) {
+    enum UserType {
+        case ownUser
+        case otherUser
+    }
+    
+    init(thermal: Thermal, userType: UserType) {
         self.id = thermal.id
+        self.userType = userType
         super.init()
         self.coordinate = thermal.coordLocation
     }
