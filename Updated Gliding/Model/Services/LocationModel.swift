@@ -25,6 +25,7 @@ class LocationModel: NSObject, ObservableObject {
         
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
+        self.locationManager.startUpdatingHeading()
     }
     
     func requestLocation() {
@@ -79,6 +80,14 @@ extension LocationModel: CLLocationManagerDelegate {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        guard let thermalCoordinates = thermalStore?.activeThermalAnnotationView?.annotation?.coordinate else { return }
+        print("OUTER")
+        guard let currentLocationCoordinates = self.currentLocation?.coordLocation else { return }
+        print("INNER")
+        DirectionalComputation.getHeadingDifference(thermalCoordinates: thermalCoordinates, currentLocationCoordinates: currentLocationCoordinates, heading: newHeading)
     }
     
     // Helper func
