@@ -20,6 +20,7 @@ class NavigationModel: ObservableObject {
             case .preFlight:
                 if let locationModel = self.locationModel {
                     locationModel.flightStore = nil
+                    locationModel.thermalStore = nil
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = nil
@@ -27,6 +28,9 @@ class NavigationModel: ObservableObject {
             case .inFlight, .inOverviewFlight:
                 if let locationModel = self.locationModel {
                     locationModel.flightStore = self.flightStore
+                    locationModel.thermalStore = self.thermalStore
+                    print("THERMAL STORE")
+                    print(self.thermalStore)
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = self.flightStore
@@ -34,6 +38,7 @@ class NavigationModel: ObservableObject {
             case .postFlight:
                 if let locationModel = self.locationModel {
                     locationModel.flightStore = nil
+                    locationModel.thermalStore = nil
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = nil
@@ -42,11 +47,12 @@ class NavigationModel: ObservableObject {
         }
     }
     
-    func attach(_ locationModel: LocationModel, _ barometricMode: BarometricModel, _ gliderStore: GliderStore, _ flightStore: FlightStore) {
+    func attach(_ locationModel: LocationModel, _ barometricMode: BarometricModel, _ gliderStore: GliderStore, _ flightStore: FlightStore, _ thermalStore: ThermalStore) {
         self.locationModel = locationModel
         self.barometricModel = barometricMode
         self.gliderStore = gliderStore
         self.flightStore = flightStore
+        self.thermalStore = thermalStore
         
         self.locationModel!.flightStore = flightStore
         self.barometricModel!.flightStore = flightStore

@@ -9,6 +9,7 @@ import CoreLocation
 
 class LocationModel: NSObject, ObservableObject {
     @Published var currentLocation: Location?
+    @Published var currentHeadingFromThermal: Double?
     @Published var locationAuthorizationStatus: CLAuthorizationStatus
     var flightStore: FlightStore?
     var thermalStore: ThermalStore?
@@ -47,7 +48,6 @@ extension LocationModel: CLLocationManagerDelegate {
         guard let flight = self.flightStore?.flight else { return }
         do {
             if flight.locations.count < 1 {
-                print("ADDING ON 0")
                 try flight.addNewLocationToFlight(newLocation: Location(location))
             } else {
                 let newLocation = Location(location)
@@ -83,11 +83,23 @@ extension LocationModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        guard let thermalCoordinates = thermalStore?.activeThermalAnnotationView?.annotation?.coordinate else { return }
-        print("OUTER")
-        guard let currentLocationCoordinates = self.currentLocation?.coordLocation else { return }
-        print("INNER")
-        DirectionalComputation.getHeadingDifference(thermalCoordinates: thermalCoordinates, currentLocationCoordinates: currentLocationCoordinates, heading: newHeading)
+        print("FIRST")
+        print(self.thermalStore)
+        print(self.flightStore)
+        var currentHeadingFromThermal: Double? = nil
+        guard let thermalCoordinates = thermalStore?.activeThermalAnnotationView?.annotation?.coordinate else {
+            self.currentHeadingFromThermal = currentHeadingFromThermal
+            return
+        }
+        print("SECOND")
+        guard let currentLocationCoordinates = self.currentLocation?.coordLocation else {
+            self.currentHeadingFromThermal = currentHeadingFromThermal
+            return
+        }
+        print("THIRD")
+        currentHeadingFromThermal = DirectionalComputation.getHeadingDifference(thermalCoordinates: thermalCoordinates, currentLocationCoordinates: currentLocationCoordinates, heading: newHeading)
+        self.currentHeadingFromThermal = currentHeadingFromThermal
+        
     }
     
     // Helper func

@@ -17,10 +17,19 @@ extension TopGlidingMapView {
                 Spacer()
                 VStack {
                     HStack {
-                        Text("<")
-                        Text(">")
+                        let heading = self.locationModel.currentHeadingFromThermal
+                        switch heading {
+                        case let _ where heading == nil:
+                            Text("NIL")
+                        case let _ where heading! < 0:
+                            Text("<")
+                        case let _ where heading! > 0:
+                            Text(">")
+                        default:
+                            Text("")
+                        }
                     }
-                    Text("Direction Text")
+                    Text(self.locationModel.currentHeadingFromThermal != nil ? String(self.locationModel.currentHeadingFromThermal!) : "")
                 }
                 Spacer()
                 VStack {

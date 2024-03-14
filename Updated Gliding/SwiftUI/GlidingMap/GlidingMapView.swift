@@ -14,10 +14,10 @@ struct GlidingMapView: View {
     var body: some View {
         
         switch navigationModel.mapState {
-        case .inFlight, .preFlight:
+        case .inFlight, .inOverviewFlight, .preFlight:
             TopGlidingMapView()
-        case .inOverviewFlight:
-            EmptyView()
+//        case .inOverviewFlight:
+//            EmptyView()
         case .postFlight:
             TopPostFlightMetricsView()
         }

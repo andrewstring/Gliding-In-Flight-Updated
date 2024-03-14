@@ -17,7 +17,8 @@ struct DirectionalComputation {
         var degrees = radians * (180 / .pi)
         degrees = (degrees + 360).truncatingRemainder(dividingBy: 360)
         
-        let degreeDiff = degrees - heading.trueHeading
+        // Not sure about this
+        var degreeDiff = heading.trueHeading - degrees + 180
         
         print("Heading Difference")
         print(degreeDiff)

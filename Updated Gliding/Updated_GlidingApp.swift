@@ -20,10 +20,11 @@ struct Updated_GlidingApp: App {
     
     func attach() {
         if !didAttach {
-            navigationModel.attach(locationModel, barometricModel, gliderStore, flightStore)
+            navigationModel.attach(locationModel, barometricModel, gliderStore, flightStore, thermalStore)
             didAttach = true
         }
     }
+    
     
     var body: some Scene {
         WindowGroup {

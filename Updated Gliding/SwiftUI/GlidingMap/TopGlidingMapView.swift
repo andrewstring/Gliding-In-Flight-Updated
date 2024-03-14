@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopGlidingMapView: View {
+    @EnvironmentObject var locationModel: LocationModel
     @EnvironmentObject var thermalStore: ThermalStore
     @State var isNavigating = false
     @State var isExpanded = false

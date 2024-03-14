@@ -28,9 +28,7 @@ class SocketConnection {
             do {
                 let thermalJSONData = String(describing: data[0]).data(using: .utf8)!
                 let thermal = try JSONDecoder().decode(Thermal.self, from: thermalJSONData)
-                print("THERMAL")
                 thermalChangeHandler([thermal])
-                
             } catch {
                 print(error)
             }
