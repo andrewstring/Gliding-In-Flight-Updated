@@ -16,28 +16,62 @@ extension TopGlidingMapView {
             HStack {
                 Spacer()
                 VStack {
+                    Text("Direction")
                     HStack {
                         let heading = self.locationModel.currentHeadingFromThermal
                         switch heading {
                         case let _ where heading == nil:
-                            Text("NIL")
+                            Text("_")
+                                .font(.system(size: 56.0))
+                                .bold()
                         case let _ where heading! < 0:
-                            Text("<")
+                            Image(systemName: "arrow.right")
+                                .font(.system(size: 40.0))
+                                .padding(.vertical, 5.0)
+//                            Text("->")
+//                                .font(.system(size: 56))
+//                                .bold()
                         case let _ where heading! > 0:
-                            Text(">")
+                            Image(systemName: "arrow.left")
+                                .font(.system(size: 40.0))
+                                .padding(.vertical, 5.0)
+//                            Text("->")
+//                            Text("<-")
+//                                .font(.system(size: 56))
+//                                .bold()
                         default:
-                            Text("")
+                            Text("_")
+                                .font(.system(size: 56.0))
+                                .bold()
                         }
                     }
                     Text(self.locationModel.currentHeadingFromThermal != nil ? String(self.locationModel.currentHeadingFromThermal!) : "")
                 }
                 Spacer()
                 VStack {
+                    Text("Altitude Difference")
                     HStack {
-                        Text("UP")
-                        Text("DOWN")
+                        let altitudeDiff = self.locationModel.currentAltitudeFromThermal
+                        switch altitudeDiff {
+                        case let _ where altitudeDiff == nil:
+                            Text("_")
+                                .font(.system(size: 56))
+                                .bold()
+                        case let _ where altitudeDiff! < 0:
+                            Image(systemName: "arrow.down")
+                                .font(.system(size: 40.0))
+                                .padding(.vertical, 5.0)
+                        case let _ where altitudeDiff! > 0:
+                            Image(systemName: "arrow.up")
+                                .font(.system(size: 40.0))
+                                .padding(.vertical, 5.0)
+                        default:
+                            Text("_")
+                                .font(.system(size: 56.0))
+                                .bold()
+                        }
                     }
-                    Text("Altitude Text")
+                    Text(self.locationModel.currentAltitudeFromThermal != nil ? String(self.locationModel.currentAltitudeFromThermal!) : "")
                 }
                 Spacer()
             }

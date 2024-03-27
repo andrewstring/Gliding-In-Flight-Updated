@@ -10,11 +10,20 @@ import Foundation
 class ThermalStore: ObservableObject {
     @Published var thermals: [Thermal]
     var thermalAnnotationViews: [ThermalAnnotationView]
+    var activeThermal: Thermal?
     var activeThermalAnnotationView: ThermalAnnotationView?
     
     init() {
         self.thermals = []
         self.thermalAnnotationViews = []
+    }
+    
+    func setActiveThermal(thermal: Thermal) {
+        self.activeThermal = thermal
+    }
+    
+    func unsetActiveThermal() {
+        self.activeThermal = nil
     }
     
     func setActiveThermalAnnotationView(id: String) {

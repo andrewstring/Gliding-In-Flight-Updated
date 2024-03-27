@@ -24,6 +24,7 @@ class NavigationModel: ObservableObject {
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = nil
+                    barometricModel.thermalStore = nil
                 }
             case .inFlight, .inOverviewFlight:
                 if let locationModel = self.locationModel {
@@ -34,6 +35,7 @@ class NavigationModel: ObservableObject {
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = self.flightStore
+                    barometricModel.thermalStore = self.thermalStore
                 }
             case .postFlight:
                 if let locationModel = self.locationModel {
@@ -42,6 +44,7 @@ class NavigationModel: ObservableObject {
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = nil
+                    barometricModel.thermalStore = nil
                 }
             }
         }

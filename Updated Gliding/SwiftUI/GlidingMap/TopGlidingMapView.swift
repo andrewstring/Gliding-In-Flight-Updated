@@ -18,13 +18,15 @@ struct TopGlidingMapView: View {
         isNavigating = false
     }
     
-    private func handleNavigateTo(id: String) {
+    private func handleNavigateTo(thermal: Thermal, id: String) {
+        self.thermalStore.setActiveThermal(thermal: thermal)
         self.thermalStore.setActiveThermalAnnotationView(id: id)
         isExpanded = false
         isNavigating = true
     }
     
     func cancelNavigation() {
+        self.thermalStore.unsetActiveThermal()
         self.thermalStore.unsetActiveThermalAnnotationView()
         isNavigating = false
         isExpanded = false
@@ -36,7 +38,7 @@ struct TopGlidingMapView: View {
                 VStack {
                     if thermalStore.thermals.count > 0 {
                         ForEach(Array(thermalStore.thermals.prefix(5))) { thermal in
-                            Button(thermal.glider != nil ? thermal.glider!.name : "No Name", action: {() in self.handleNavigateTo(id: thermal.id)})
+                            Button(thermal.glider != nil ? thermal.glider!.name : "No Name", action: {() in self.handleNavigateTo(thermal: thermal, id: thermal.id)})
                                 .padding()
                                 .background(Color.gray)
                                 .foregroundColor(Color.black)

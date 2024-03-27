@@ -11,6 +11,7 @@ class BarometricModel: ObservableObject {
     @Published var absoluteBarometricAltitude: AbsoluteBarometricAltitude?
     @Published var relativeBarometricAltitude: RelativeBarometricAltitude?
     var flightStore: FlightStore?
+    var thermalStore: ThermalStore?
     
     let altimeter: CMAltimeter
     let operationQueue: OperationQueue

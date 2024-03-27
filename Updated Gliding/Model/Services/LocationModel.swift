@@ -10,6 +10,7 @@ import CoreLocation
 class LocationModel: NSObject, ObservableObject {
     @Published var currentLocation: Location?
     @Published var currentHeadingFromThermal: Double?
+    @Published var currentAltitudeFromThermal: Double?
     @Published var locationAuthorizationStatus: CLAuthorizationStatus
     var flightStore: FlightStore?
     var thermalStore: ThermalStore?
@@ -46,6 +47,11 @@ extension LocationModel: CLLocationManagerDelegate {
         guard let location = getLatestLocation(locations) else { return }
         self.currentLocation = Location(location)
         guard let flight = self.flightStore?.flight else { return }
+        
+        if let activeThermal = thermalStore?.activeThermal {
+            self.currentAltitudeFromThermal = activeThermal.location.altitude - location.altitude
+        }
+        
         do {
             if flight.locations.count < 1 {
                 try flight.addNewLocationToFlight(newLocation: Location(location))

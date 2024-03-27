@@ -24,13 +24,6 @@ struct DirectionalComputation {
             }
         }
         
-//        if (degreeDiff < -180) {
-//            degreeDiff = abs(degreeDiff) - 129
-//            
-//        }
-        
-        print("Heading Difference")
-        print(degreeDiff)
         return degreeDiff
     }
     
