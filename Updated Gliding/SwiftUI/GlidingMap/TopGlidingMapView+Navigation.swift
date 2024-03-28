@@ -13,69 +13,69 @@ extension TopGlidingMapView {
             Text("Navigation")
                 .font(.title)
                 .bold()
-            HStack {
-                Spacer()
-                VStack {
-                    Text("Direction")
-                    HStack {
-                        let heading = self.locationModel.currentHeadingFromThermal
-                        switch heading {
-                        case let _ where heading == nil:
-                            Text("_")
-                                .font(.system(size: 56.0))
-                                .bold()
-                        case let _ where heading! < 0:
-                            Image(systemName: "arrow.right")
-                                .font(.system(size: 40.0))
-                                .padding(.vertical, 5.0)
-//                            Text("->")
-//                                .font(.system(size: 56))
-//                                .bold()
-                        case let _ where heading! > 0:
-                            Image(systemName: "arrow.left")
-                                .font(.system(size: 40.0))
-                                .padding(.vertical, 5.0)
-//                            Text("->")
-//                            Text("<-")
-//                                .font(.system(size: 56))
-//                                .bold()
-                        default:
-                            Text("_")
-                                .font(.system(size: 56.0))
-                                .bold()
+            if (navigationModel.mapState == .inFlight) {
+                HStack {
+                    Spacer()
+                    VStack {
+                        Text("Direction")
+                        HStack {
+                            let heading = self.locationModel.currentHeadingFromThermal
+                            switch heading {
+                            case let _ where heading == nil:
+                                Text("_")
+                                    .font(.system(size: 56.0))
+                                    .bold()
+                            case let _ where heading! < 0:
+                                Image(systemName: "arrow.right")
+                                    .font(.system(size: 40.0))
+                                    .padding(.vertical, 5.0)
+                            case let _ where heading! > 0:
+                                Image(systemName: "arrow.left")
+                                    .font(.system(size: 40.0))
+                                    .padding(.vertical, 5.0)
+                            default:
+                                Text("_")
+                                    .font(.system(size: 56.0))
+                                    .bold()
+                            }
                         }
+                        Text(self.locationModel.currentHeadingFromThermal != nil ? String(self.locationModel.currentHeadingFromThermal!) : "")
                     }
-                    Text(self.locationModel.currentHeadingFromThermal != nil ? String(self.locationModel.currentHeadingFromThermal!) : "")
-                }
-                Spacer()
-                VStack {
-                    Text("Altitude Difference")
-                    HStack {
-                        let altitudeDiff = self.locationModel.currentAltitudeFromThermal
-                        switch altitudeDiff {
-                        case let _ where altitudeDiff == nil:
-                            Text("_")
-                                .font(.system(size: 56))
-                                .bold()
-                        case let _ where altitudeDiff! < 0:
-                            Image(systemName: "arrow.down")
-                                .font(.system(size: 40.0))
-                                .padding(.vertical, 5.0)
-                        case let _ where altitudeDiff! > 0:
-                            Image(systemName: "arrow.up")
-                                .font(.system(size: 40.0))
-                                .padding(.vertical, 5.0)
-                        default:
-                            Text("_")
-                                .font(.system(size: 56.0))
-                                .bold()
+                    Spacer()
+                    VStack {
+                        Text("Altitude Difference")
+                        HStack {
+                            let altitudeDiff = self.locationModel.currentAltitudeFromThermal
+                            switch altitudeDiff {
+                            case let _ where altitudeDiff == nil:
+                                Text("_")
+                                    .font(.system(size: 56))
+                                    .bold()
+                            case let _ where altitudeDiff! < 0:
+                                Image(systemName: "arrow.up")
+                                    .font(.system(size: 40.0))
+                                    .padding(.vertical, 5.0)
+                            case let _ where altitudeDiff! > 0:
+                                Image(systemName: "arrow.down")
+                                    .font(.system(size: 40.0))
+                                    .padding(.vertical, 5.0)
+                            default:
+                                Text("_")
+                                    .font(.system(size: 56.0))
+                                    .bold()
+                            }
                         }
+                        Text(self.locationModel.currentAltitudeFromThermal != nil ? String(self.locationModel.currentAltitudeFromThermal!) : "")
                     }
-                    Text(self.locationModel.currentAltitudeFromThermal != nil ? String(self.locationModel.currentAltitudeFromThermal!) : "")
+                    Spacer()
                 }
-                Spacer()
+                .padding()
             }
-            .padding()
+            else {
+                Text("Start Flight for Navigation Details")
+                    .font(.system(size: 30.0))
+                    .padding()
+            }
             Button("Cancel Navigation", action: cancelNavigation)
                 .font(.headline)
                 .foregroundColor(.black)
