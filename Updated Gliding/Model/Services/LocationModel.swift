@@ -12,6 +12,7 @@ class LocationModel: NSObject, ObservableObject {
     @Published var currentHeadingFromThermal: Double?
     @Published var currentAltitudeFromThermal: Double?
     @Published var locationAuthorizationStatus: CLAuthorizationStatus
+    var locationUpdateRefresher = 0
     var flightStore: FlightStore?
     var thermalStore: ThermalStore?
     var glidingMapViewController: GlidingMapViewController?
@@ -60,6 +61,11 @@ extension LocationModel: CLLocationManagerDelegate {
                 let lastLocation = flight.locations[flight.locations.count-1]
                 let distance = try lastLocation.distance(newLocation: location)
                 if try Location.exceedsThresholdDistance(distance: distance) {
+                    locationUpdateRefresher += 1
+                    if locationUpdateRefresher >= 5 {
+                        // UPDATE ZOOM WITH THERMAL
+                        locationUpdateRefresher = 0
+                    }
                     try flight.addNewLocationToFlight(newLocation: newLocation)
                     flight.distanceTraveled += distance
                     if self.glidingMapViewController != nil {
