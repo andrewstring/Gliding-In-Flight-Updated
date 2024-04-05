@@ -64,6 +64,8 @@ class NavigationModel: ObservableObject {
     
     @MainActor
     func startNavigation() {
+        print("Screen Size")
+        print(NavigationZoomLevel.getScreenSize())
         self.mapState = .inFlight
         guard let glider = self.gliderStore?.glider else { print(NavigationModelError.StartingNavigationWithNoGliderError.localizedDescription); return }
         guard let flightStore = self.flightStore else { print(NavigationModelError.StartingNavigtationWithNoFlightStoreError.localizedDescription); return }

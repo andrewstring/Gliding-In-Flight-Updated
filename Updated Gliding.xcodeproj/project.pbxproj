@@ -73,6 +73,7 @@
 		49DA87A82B826E4F00350008 /* APIThermal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A72B826E4F00350008 /* APIThermal.swift */; };
 		49DA87AA2B826E5D00350008 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA87A92B826E5D00350008 /* APIError.swift */; };
 		49EFBE242B9AE8910047FF2F /* ThermalNavigationRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EFBE232B9AE8910047FF2F /* ThermalNavigationRoute.swift */; };
+		49F0BAAE2BBFA4BD00E4F22C /* NavigationZoomLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0BAAD2BBFA4BD00E4F22C /* NavigationZoomLevel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +164,7 @@
 		49DA87A72B826E4F00350008 /* APIThermal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIThermal.swift; sourceTree = "<group>"; };
 		49DA87A92B826E5D00350008 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		49EFBE232B9AE8910047FF2F /* ThermalNavigationRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThermalNavigationRoute.swift; sourceTree = "<group>"; };
+		49F0BAAD2BBFA4BD00E4F22C /* NavigationZoomLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationZoomLevel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				494515D12B83CC9200C77B49 /* DateTime.swift */,
 				49B22B792B958403007D8007 /* MeterConversion.swift */,
 				499F0D2C2BA141FB00301864 /* DirectionalComputation.swift */,
+				49F0BAAD2BBFA4BD00E4F22C /* NavigationZoomLevel.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				494515ED2B84475000C77B49 /* ErrorView.swift in Sources */,
 				4973931D2B859F23005B433D /* GlidingMapViewController+Delegate.swift in Sources */,
 				49DA879F2B8263F300350008 /* FlightStoreError.swift in Sources */,
+				49F0BAAE2BBFA4BD00E4F22C /* NavigationZoomLevel.swift in Sources */,
 				494515F22B84498B00C77B49 /* LocationAuthorizationInvalidView.swift in Sources */,
 				49DA878C2B825E1200350008 /* Location.swift in Sources */,
 				499F0D2D2BA141FB00301864 /* DirectionalComputation.swift in Sources */,

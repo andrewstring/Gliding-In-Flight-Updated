@@ -89,23 +89,17 @@ extension LocationModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
-        print("FIRST")
-        print(self.thermalStore)
-        print(self.flightStore)
         var currentHeadingFromThermal: Double? = nil
         guard let thermalCoordinates = thermalStore?.activeThermalAnnotationView?.annotation?.coordinate else {
             self.currentHeadingFromThermal = currentHeadingFromThermal
             return
         }
-        print("SECOND")
         guard let currentLocationCoordinates = self.currentLocation?.coordLocation else {
             self.currentHeadingFromThermal = currentHeadingFromThermal
             return
         }
-        print("THIRD")
         currentHeadingFromThermal = DirectionalComputation.getHeadingDifference(thermalCoordinates: thermalCoordinates, currentLocationCoordinates: currentLocationCoordinates, heading: newHeading)
         self.currentHeadingFromThermal = currentHeadingFromThermal
-        
     }
     
     // Helper func
