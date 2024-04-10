@@ -30,8 +30,6 @@ class NavigationModel: ObservableObject {
                 if let locationModel = self.locationModel {
                     locationModel.flightStore = self.flightStore
                     locationModel.thermalStore = self.thermalStore
-                    print("THERMAL STORE")
-                    print(self.thermalStore)
                 }
                 if let barometricModel = self.barometricModel {
                     barometricModel.flightStore = self.flightStore
@@ -64,8 +62,6 @@ class NavigationModel: ObservableObject {
     
     @MainActor
     func startNavigation() {
-        print("Screen Size")
-        print(NavigationZoomLevel.getScreenSize())
         self.mapState = .inFlight
         guard let glider = self.gliderStore?.glider else { print(NavigationModelError.StartingNavigationWithNoGliderError.localizedDescription); return }
         guard let flightStore = self.flightStore else { print(NavigationModelError.StartingNavigtationWithNoFlightStoreError.localizedDescription); return }

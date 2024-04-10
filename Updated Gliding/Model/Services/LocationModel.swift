@@ -63,7 +63,10 @@ extension LocationModel: CLLocationManagerDelegate {
                 if try Location.exceedsThresholdDistance(distance: distance) {
                     locationUpdateRefresher += 1
                     if locationUpdateRefresher >= 5 {
-                        // UPDATE ZOOM WITH THERMAL
+                        if glidingMapViewController?.mapState == .inFlight && thermalStore?.activeThermal != nil {
+                            print("Screen Size")
+                            print(NavigationZoomLevel.getScreenSize())
+                        }
                         locationUpdateRefresher = 0
                     }
                     try flight.addNewLocationToFlight(newLocation: newLocation)
